@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 
 public class LoginServlet extends HttpServlet {
 
-    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
 
@@ -20,16 +20,15 @@ public class LoginServlet extends HttpServlet {
 
         // TODO: 5/27/2022 need to get username and password from db
         if (username.equals("admin") && password.equals("123")) {
-            req.getRequestDispatcher("navbar.html").include(req, resp);
-            out.print("<div class=\"container\"><br>you are successfully logged in");
-            out.print("<br>Welcome " + username + "</div>");
+            req.getRequestDispatcher("manager-home.html").include(req, resp);
+            out.print("<div class='text-center'>Welcome " + username + "!</div>");
             HttpSession session = req.getSession();
             session.setAttribute("username", username);
 
         } else {
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("/login.html");
             requestDispatcher.include(req, resp);
-            out.println("<div class=\"container\">Sorry, invalid details...</div>");
+            out.println("<div class=\"container text-center text-danger\">Username or Password is incorrect</div>");
         }
         out.close();
     }
