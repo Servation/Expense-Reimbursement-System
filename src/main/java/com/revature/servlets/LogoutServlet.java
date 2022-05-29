@@ -17,6 +17,7 @@ public class LogoutServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
         if (session != null) {
             session.removeAttribute("username");
+            session.removeAttribute("reimbursement");
             out.println("<div class=\"container\">You are logged out successfully</div>");
         } else {
             out.println("<div class=\"container\">You are not logged in</div>");

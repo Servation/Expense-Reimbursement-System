@@ -43,10 +43,29 @@
 
   <servlet>
     <servlet-name>AddEmployee</servlet-name>
-    <servlet-class>com.revature.servlets.AddEmployeeServlet</servlet-class>
+    <servlet-class>com.revature.servlets.AddEmployeeFormServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AddEmployee</servlet-name>
     <url-pattern>/add-employee</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>EmployeeReimbursement</servlet-name>
+    <servlet-class>com.revature.servlets.EmployeeReimbursementToolsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeReimbursement</servlet-name>
+    <url-pattern>/reimbursement</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>Profile</servlet-name>
+    <servlet-class>com.revature.servlets.ProfileServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Profile</servlet-name>
+    <url-pattern>/profile</url-pattern>
+  </servlet-mapping>
+
 </web-app>

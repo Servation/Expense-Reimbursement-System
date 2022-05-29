@@ -14,16 +14,30 @@ public class AddEmployeeFormServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         HttpSession session = request.getSession(false);
-        if (session != null) {
-            String username = (String) session.getAttribute("username");
-            if (username.equals("admin")) {
-                request.getRequestDispatcher("manager-home.html").include(request, response);
-                request.getRequestDispatcher("management-tools.component.html").include(request, response);
-                request.getRequestDispatcher("add-employee.component.html").include(request, response);
+        try {
+
+            if (session != null) {
+                String username = session.getAttribute("username").toString();
+                if (username.equals("admin")) {
+                    request.getRequestDispatcher("manager-home.html").include(request, response);
+                    request.getRequestDispatcher("management-tools.component.html").include(request, response);
+                    request.getRequestDispatcher("add-employee.component.html").include(request, response);
+                } else {
+                    throw new Exception();
+                }
             }
-        } else {
+        } catch (Exception e){
             request.getRequestDispatcher("logout").include(request, response);
         }
+        out.close();
+    }
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        request.getRequestDispatcher("manager-home.html").include(request, response);
+        request.getRequestDispatcher("management-tools.component.html").include(request, response);
+        request.getRequestDispatcher("add-employee.component.html").include(request, response);
+        out.write("<div class=\"container text-center text-success\">Employee added</div>");
         out.close();
     }
 }
