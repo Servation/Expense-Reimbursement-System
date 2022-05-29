@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name = "com.revature.database.Reimbursement" table = "REIMBURSEMENT">
+        <meta attribute="class-description">Contains reimbursement details</meta>
+
+        <id name="reimbursement_ID" column="Reimbursement_ID" type="int"><generator class="native"/></id>
+
+        <property name="user_ID" column="User_ID" type="int"/>
+        <property name="title" column="Title" type="string"/>
+        <property name="amount" column="Amount" type="double"/>
+        <property name="detail" column="Detail" type="string"/>
+        <property name="date" column="Date" type="string"/>
+        <property name="status" column="Status" type="string"/>
+
+    </class>
+</hibernate-mapping>
