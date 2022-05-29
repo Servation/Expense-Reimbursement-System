@@ -25,6 +25,12 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = req.getSession();
             session.setAttribute("username", username);
 
+        } else if (username.equals("user") && password.equals("123")) {
+            req.getRequestDispatcher("employee-home.html").include(req, resp);
+            out.print("<div class='text-center'>Welcome " + username + "!</div>");
+            HttpSession session = req.getSession();
+            session.setAttribute("username", username);
+
         } else {
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("/login.html");
             requestDispatcher.include(req, resp);
