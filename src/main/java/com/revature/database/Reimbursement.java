@@ -6,10 +6,6 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
-enum Status{
-    Denied, Pending, Approved
-}
-
 @Entity
 @Table(name = "reimbursement")
 public class Reimbursement {

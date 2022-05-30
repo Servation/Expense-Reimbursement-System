@@ -26,7 +26,7 @@ public class EmployeeReimbursementToolsServlet extends HttpServlet {
                 request.getRequestDispatcher("employee-reimbursement-controls.component.html").include(request, response);
                 request.getRequestDispatcher("employee-reimbursement-form.component.html").include(request,response);
                 if (session.getAttribute("reimbursement").toString().equals("true")) {
-                    out.println("<div class='text-success'>Reimbursement recorded</div>");
+                    out.println("<div class='text-success container'>Reimbursement recorded</div>");
                 } else if (session.getAttribute("reimbursement").toString().equals("false")) {
                     out.println("<div class='container text-success'>Could not record reimbursement</div>");
                 }
