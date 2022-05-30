@@ -1,5 +1,8 @@
 package com.revature.servlets;
 
+import com.revature.database.DatabaseHandler;
+import com.revature.database.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,18 +14,19 @@ import java.io.PrintWriter;
 public class ProfileServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
-        PrintWriter out = response.getWriter();HttpSession session = request.getSession(false);
+        PrintWriter out = response.getWriter();
+        HttpSession session = request.getSession(false);
         try {
             if (session != null) {
-                String username = (String) session.getAttribute("username");
-                if (username.equals("user")) {
+                String username = session.getAttribute("username").toString();
+                String password = session.getAttribute("password").toString();
+                User user = DatabaseHandler.getDbHandler().getUser(username, password);
+                if (user.getType().equals("Employee")) {
                     request.getRequestDispatcher("employee-home.html").include(request, response);
-                    // TODO: 5/28/2022 replace object
-                    out.println(getProfile(new Object()));
-                } else if (username.equals("admin")) {
+                    out.println(getProfile(user));
+                } else if (user.getType().equals("Manager")) {
                     request.getRequestDispatcher("manager-home.html").include(request, response);
-                    // TODO: 5/28/2022 replace object
-                    out.println(getProfile(new Object()));
+                    out.println(getProfile(user));
                 } else {
                     throw new Exception();
                 }
@@ -33,26 +37,57 @@ public class ProfileServlet extends HttpServlet {
         out.close();
     }
 
-    public String getProfile(Object o){
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        HttpSession session = request.getSession(false);
+        try {
+            if (session != null) {
+                String username = session.getAttribute("username").toString();
+                String password = session.getAttribute("password").toString();
+                User user = DatabaseHandler.getDbHandler().getUser(username, password);
+                String newUsername = request.getParameter("username");
+                String newPassword = request.getParameter("password");
+                String newEmail = request.getParameter("email");
+                if (!user.getUsername().equals(newUsername) || newUsername.isEmpty()) {
+                    DatabaseHandler.getDbHandler().updateUsername(user.getUser_id(), newUsername);
+                    session.setAttribute("username", newUsername);
+                }
+                if (!user.getPassword().equals(newPassword) || newPassword.isEmpty()) {
+                    DatabaseHandler.getDbHandler().updatePassword(user.getUser_id(), newPassword);
+                    session.setAttribute("password", newPassword);
+                }
+                if (!user.getEmail().equals(newEmail) || newEmail.isEmpty()) {
+                    DatabaseHandler.getDbHandler().updateEmail(user.getUser_id(), newEmail);
+                }
+                doGet(request, response);
+            }
+        } catch (Exception e) {
+            request.getRequestDispatcher("logout").include(request, response);
+        }
+        out.close();
+    }
 
-        String firstName = "John";
-        String lastName = "Doe";
-        String userName = "JDoe1";
-        String password = "1234";
-        String email = "jD@gmail.com";
+    public String getProfile(User user) {
+
+        String firstName = user.getFirst_Name();
+        String lastName = user.getLast_Name();
+        String userName = user.getUsername();
+        String password = user.getPassword();
+        String email = user.getEmail();
         String out = "";
 
-        out= "<div class=\"container mt-2\">\n" +
+        out = "<div class=\"container mt-2\">\n" +
                 "   <form action=\"profile\" method=\"post\">\n" +
                 "    <div class=\"form-row\">\n" +
                 "     <div class=\"col-sm mb-2\">\n" +
                 "      <label for=\"firstName\">First name</label>\n" +
-                "      <input type=\"text\" class=\"form-control\" id=\"firstName\" name=\"first\" value=\""+firstName+"\" " +
+                "      <input type=\"text\" class=\"form-control\" id=\"firstName\" name=\"first\" value=\"" + firstName + "\" " +
                 "required disabled />\n" +
                 "     </div>\n" +
                 "     <div class=\"col-sm mb-2\">\n" +
                 "      <label for=\"lastName\">Last name</label>\n" +
-                "      <input type=\"text\" class=\"form-control\" id=\"lastName\" name=\"last\" value=\""+lastName+"\" " +
+                "      <input type=\"text\" class=\"form-control\" id=\"lastName\" name=\"last\" value=\"" + lastName + "\" " +
                 "required disabled />\n" +
                 "     </div>\n" +
                 "    </div>\n" +
@@ -60,16 +95,17 @@ public class ProfileServlet extends HttpServlet {
                 "     <div class=\"col-sm mb-2\">\n" +
                 "      <label for=\"Username\">Username</label>\n" +
                 "      <input type=\"text\" class=\"form-control\" id=\"Username\" name=\"username\" " +
-                "value=\""+ userName +"\" required disabled />\n" +
+                "value=\"" + userName + "\" required disabled />\n" +
                 "     </div>\n" +
                 "     <div class=\"col-sm mb-2\">\n" +
                 "      <label for=\"Password\">Password</label>\n" +
                 "      <input type=\"text\" class=\"form-control\" id=\"Password\" name=\"password\" " +
-                "value=\""+ password +"\" required disabled />\n" +
+                "value=\"" + password + "\" required disabled />\n" +
                 "     </div>\n\n" +
                 "       <div class=\"col-sm mb-2\">\n" +
                 "       <label for=\"lastName\">Email</label>\n" +
-                "       <input type=\"text\" class=\"form-control\" id=\"email\" name=\"email\" value=\""+ email+"\" " +
+                "       <input type=\"text\" class=\"form-control\" id=\"email\" name=\"email\" value=\"" + email +
+                "\" " +
                 "       required disabled />\n" +
                 "       </div>" +
                 "    </div>\n" +
@@ -79,13 +115,15 @@ public class ProfileServlet extends HttpServlet {
                 "   <script>\n" +
                 "    const editButton = document.getElementById(\"editButton\");\n" +
                 "    editButton.addEventListener(\"click\", () => {\n" +
-                "     const firstName = document.getElementById(\"firstName\");\n" +
+                "     const password = document.getElementById(\"Password\");\n" +
                 "     const inputs = document.getElementsByTagName(\"input\");\n" +
                 "     const submitButton = document.getElementById(\"submitButton\");\n" +
                 "\n" +
-                "     if (firstName.disabled) {\n" +
+                "     if (password.disabled) {\n" +
                 "      for (let el of inputs) {\n" +
-                "       el.disabled = false;\n" +
+                "       if (!(el.id == \"firstName\" || el.id == \"lastName\")){\n" +
+                "          el.disabled = false;\n" +
+                "         }" +
                 "      }\n" +
                 "      submitButton.disabled = false;\n" +
                 "     } else {\n" +

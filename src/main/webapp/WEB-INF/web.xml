@@ -68,4 +68,39 @@
     <url-pattern>/profile</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>ManagePending</servlet-name>
+    <servlet-class>com.revature.servlets.ManagementPendingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManagePending</servlet-name>
+    <url-pattern>/manage-pending</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>EmployeePending</servlet-name>
+    <servlet-class>com.revature.servlets.EmployeePendingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeePending</servlet-name>
+    <url-pattern>/pending</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>EmployeeResolved</servlet-name>
+    <servlet-class>com.revature.servlets.EmployeeResolvedServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeResolved</servlet-name>
+    <url-pattern>/resolved</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ManageResolved</servlet-name>
+    <servlet-class>com.revature.servlets.ManagementResolvedServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManageResolved</servlet-name>
+    <url-pattern>/manage-resolved</url-pattern>
+  </servlet-mapping>
 </web-app>

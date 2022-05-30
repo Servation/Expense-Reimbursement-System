@@ -1,5 +1,8 @@
 package com.revature.servlets;
 
+import com.revature.database.DatabaseHandler;
+import com.revature.database.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
@@ -16,12 +19,14 @@ public class EmployeeReimbursementToolsServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
         if (session != null) {
             String username = session.getAttribute("username").toString();
-            if (username.equals("user")) {
+            String password = session.getAttribute("password").toString();
+            User user = DatabaseHandler.getDbHandler().getUser(username, password);
+            if (user.getType().equals("Employee")) {
                 request.getRequestDispatcher("employee-home.html").include(request, response);
                 request.getRequestDispatcher("employee-reimbursement-controls.component.html").include(request, response);
                 request.getRequestDispatcher("employee-reimbursement-form.component.html").include(request,response);
                 if (session.getAttribute("reimbursement").toString().equals("true")) {
-                    out.println("<div class='text-success'>Reimbursement recorded</div>");
+                    out.println("<div class='text-success container'>Reimbursement recorded</div>");
                 } else if (session.getAttribute("reimbursement").toString().equals("false")) {
                     out.println("<div class='container text-success'>Could not record reimbursement</div>");
                 }
@@ -37,8 +42,10 @@ public class EmployeeReimbursementToolsServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession(false);
         if (session != null) {
-            String username = (String) session.getAttribute("username");
-            if (username.equals("user")) {
+            String username = session.getAttribute("username").toString();
+            String password = session.getAttribute("password").toString();
+            User user = DatabaseHandler.getDbHandler().getUser(username, password);
+            if (user.getType().equals("Employee")) {
                 String title = request.getParameter("title");
                 double amount = Double.parseDouble(request.getParameter("amount"));
                 String date = request.getParameter("date");
