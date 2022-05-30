@@ -1,5 +1,8 @@
 package com.revature.servlets;
 
+import com.revature.database.DatabaseHandler;
+import com.revature.database.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,10 +17,13 @@ public class PendingRequestServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession(false);
         if (session != null) {
-            String username = (String) session.getAttribute("username");
-            if (username.equals("admin")) {
+            String username = session.getAttribute("username").toString();
+            String password = session.getAttribute("password").toString();
+            User user = DatabaseHandler.getDbHandler().getUser(username, password);
+            if (user.getType().equals("Manager")) {
                 request.getRequestDispatcher("manager-home.html").include(request, response);
                 request.getRequestDispatcher("management-tools.component.html").include(request, response);
+                out.println("TODO");
             }
         } else {
             request.getRequestDispatcher("logout").include(request, response);
