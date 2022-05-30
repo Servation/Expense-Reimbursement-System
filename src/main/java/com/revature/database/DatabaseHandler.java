@@ -115,7 +115,7 @@ public class DatabaseHandler {
         List<Reimbursement> pendingList = new ArrayList<>();
 
         for(Reimbursement reimbursement: currentList){
-            if(reimbursement.getStatus() == Status.Pending) {
+            if(reimbursement.getStatus().equals("Pending")) {
                 pendingList.add(reimbursement);
             }
         }
@@ -138,9 +138,9 @@ public class DatabaseHandler {
         Transaction transaction = null;
         List<Reimbursement> reimbursementsList = new ArrayList<>();
 
-        try(Session session = factory.openSession()){
+        try(Session session = factory.openSession()) {
             transaction = session.beginTransaction();
-            List currentList = session.createQuery("From Reimbursement").list();
+            List currentList = session.createQuery("FROM Reimbursement").list();
             for(Object reimbursements : currentList){
                 reimbursementsList.add((Reimbursement) reimbursements);
             }
@@ -150,5 +150,51 @@ public class DatabaseHandler {
             reimbursementsList = null;
         }
         return reimbursementsList;
+    }
+
+    public void addingUser(String first_name, String last_name, String email, String type, String username, String password){
+        Transaction transaction = null;
+        User newUser = null;
+
+        try(Session session = factory.openSession()){
+            transaction = session.beginTransaction();
+            newUser = new User(first_name, last_name, email, type, username, password);
+            session.save(newUser);
+            transaction.commit();
+        } catch(HibernateException e){
+            if(transaction != null) transaction.rollback();
+            e.printStackTrace();
+        }
+    }
+
+    public void addingReimbursement(int UserID, String title, double amount, String detail, String date){
+        Transaction transaction = null;
+        Reimbursement newReimbursement = null;
+
+        try(Session session = factory.openSession()){
+            transaction = session.beginTransaction();
+            newReimbursement = new Reimbursement(UserID, title, amount, detail, date, "Pending");
+            session.save(newReimbursement);
+            transaction.commit();
+        } catch(HibernateException e){
+            if(transaction != null) transaction.rollback();
+            e.printStackTrace();
+        }
+    }
+    public void approveReimbursement(int reimbursementID, String accept){
+        Reimbursement updateReimbursement = null;
+        Transaction transaction = null;
+
+        try(Session session = factory.openSession()){
+            transaction = session.beginTransaction();
+            updateReimbursement = session.get(Reimbursement.class, reimbursementID);
+            System.out.println(updateReimbursement.toString());
+            System.out.println(accept);
+            updateReimbursement.setStatus(accept);
+            transaction.commit();
+        }catch(HibernateException e){
+            if(transaction != null) transaction.rollback();
+            e.printStackTrace();
+        }
     }
 }
