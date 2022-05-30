@@ -44,7 +44,7 @@ public class EmployeeResolvedServlet extends HttpServlet {
         List<Reimbursement> reimbursements = DatabaseHandler.getDbHandler().listUserReimbursement(id);
         StringBuilder output = new StringBuilder("<div class='container'>");
         for (Reimbursement reimbursement : reimbursements) {
-            if (reimbursement.getStatus().equals("Pending")){
+            if (!reimbursement.getStatus().equals("Pending")){
                 output.append("<div>").append(reimbursement).append("</div>");
             }
         }

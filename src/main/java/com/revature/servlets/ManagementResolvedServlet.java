@@ -2,7 +2,6 @@ package com.revature.servlets;
 
 import com.revature.database.DatabaseHandler;
 import com.revature.database.Reimbursement;
-import com.revature.database.Status;
 import com.revature.database.User;
 
 import javax.servlet.ServletException;
@@ -45,7 +44,7 @@ public class ManagementResolvedServlet extends HttpServlet {
         List<Reimbursement> reimbursements = DatabaseHandler.getDbHandler().listUserReimbursement(id);
         StringBuilder output = new StringBuilder("<div class='container'>");
         for (Reimbursement reimbursement : reimbursements) {
-            if (!(reimbursement.getStatus() == Status.Pending || reimbursement.getUser_ID() == id)){
+            if (!(reimbursement.getStatus().equals("Pending") || reimbursement.getUser_ID() == id)){
                 output.append("<div>").append(reimbursement).append("</div>");
             }
         }
