@@ -22,8 +22,11 @@ public class TestMain {
                 System.out.println("4: Update your username");
                 System.out.println("5: Update your password");
                 System.out.println("6: View reimbursement pending");
-                System.out.println("7: Approve reimbursement");
+                System.out.println("7: View a user's reimbursement");
                 System.out.println("8: View all employee");
+                System.out.println("9: Adding user");
+                System.out.println("10: Adding reimbursement");
+                System.out.println("11: Approving reimbursement");
                 System.out.println("------------------------\n");
                 System.out.print("Enter your input: ");
                 input = getNumber();
@@ -93,6 +96,45 @@ public class TestMain {
                         List<User> userList = dbHandler.listUser();
                         userList.forEach(System.out::println);
                     }
+                    case 9 -> {//adding user
+                        System.out.println("Adding new user");
+                        System.out.print("Enter First Name: ");
+                        String firstName = scanner.next();
+                        System.out.print("Enter Last Name: ");
+                        String lastName = scanner.next();
+                        System.out.print("Enter Email: ");
+                        String email = scanner.next();
+                        System.out.print("Enter Type: ");
+                        String type = enterType();
+                        System.out.print("Enter Username: ");
+                        String userName = scanner.next();
+                        System.out.print("Enter Password: ");
+                        String password = scanner.next();
+                        dbHandler.addingUser(firstName, lastName, email, type, userName,password);
+                        System.out.println("new user added");
+                    }
+                    case 10 -> {//adding reimbursement
+                        System.out.println("Adding new reimbursement");
+                        System.out.println("Enter title: ");
+                        String title = scanner.next();
+                        System.out.println("Enter amount: ");
+                        double amount = scanner.nextDouble();
+                        System.out.println("Enter detail: ");
+                        String detail = scanner.next();
+                        System.out.println("Enter date: ");
+                        String date = scanner.next();
+                        dbHandler.addingReimbursement(user.getUser_id(), title, amount, detail, date);
+                        System.out.println("adding new reimbursement");
+                    }
+                    case 11 -> {//approve reimbursement
+                        System.out.println("Approving/denying reimbursement");
+                        System.out.print("Enter pending reimbursement ID: ");
+                        int id = scanner.nextInt();
+                        System.out.print("Approved or Denied: ");
+                        String approve = enterStatus();
+                        dbHandler.approveReimbursement(id, approve);
+                        System.out.println("Reimbursement status changed!");
+                    }
                     case 0 -> {
                         run = false;
                         System.out.println("Exit");
@@ -112,6 +154,32 @@ public class TestMain {
             number = 0;
         }
         return number;
+    }
+
+    public static String enterType(){
+        while(true){
+            Scanner scanner = new Scanner(System.in);
+            String input = scanner.next();
+            if(input.equals("Manager") || input.equals("Employee")){
+                return input;
+            }
+            else{
+                System.out.print("Please enter either 'Manager' or 'Employee': ");
+            }
+        }
+    }
+
+    public static String enterStatus(){
+        while(true){
+            Scanner scanner = new Scanner(System.in);
+            String input = scanner.next();
+            if(input.equals("Denied") || input.equals("Approved")){
+                return input;
+            }
+            else{
+                System.out.print("Please enter either 'Denied' or 'Approved': ");
+            }
+        }
     }
 
 }

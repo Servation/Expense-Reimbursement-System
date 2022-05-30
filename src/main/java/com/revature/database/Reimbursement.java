@@ -1,22 +1,26 @@
 package com.revature.database;
 
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 
 @Entity
 @Table(name = "reimbursement")
 public class Reimbursement {
+    @Column(name = "Reimbursement_ID")
     private int reimbursement_ID;
+    @Column(name = "User_ID")
     private int user_ID;
+    @Column(name = "Title")
     private String title;
+    @Column(name = "Amount")
     private double amount;
+    @Column(name = "Detail")
     private String detail;
+    @Column(name = "Date")
     private String date;
-    @Enumerated(EnumType.STRING)
-    private Status status;
+    @Column(name = "Status")
+    private String status;
 
     public Reimbursement(){}
 
@@ -26,7 +30,7 @@ public class Reimbursement {
         this.amount = amount;
         this.detail = detail;
         this.date = date;
-        this.status = Status.valueOf(status);
+        this.status = status;
     }
 
     public int getReimbursement_ID() {
@@ -77,12 +81,12 @@ public class Reimbursement {
         this.date = date;
     }
 
-    public Status getStatus() {
+    public String getStatus() {
         return status;
     }
 
     public void setStatus(String status) {
-        this.status = Status.valueOf(status);
+        this.status = status;
     }
 
     @Override
