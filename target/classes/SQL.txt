@@ -1,3 +1,5 @@
+CREATE DATABASE ers;
+
 CREATE TABLE user(
 User_ID INTEGER NOT NULL AUTO_INCREMENT,
 First_Name VARCHAR(20) NOT NULL,
@@ -31,18 +33,3 @@ INSERT INTO reimbursement VALUES
 (102, 1004, "Dinner", 412.42, "Hosting party dinner with collaborator", "2/2/2022", 'Pending'),
 (103, 1002, "Travel", 234.45, "Travel Expense", "3/3/2022", 'Pending'),
 (104, 1001, "Travel", 221.32, "Flight ticket", "4/4/2022", 'Pending');
-
-DELIMITER //
-CREATE PROCEDURE ViewPending()
-    BEGIN
-        SELECT * FROM reimbursement WHERE Status = 'Pending';
-    END //
-DELIMITER ;
-
-DELIMITER //
-CREATE PROCEDURE ViewEmployee()
-    BEGIN
-        SELECT User_ID, FirstName, LastName, Email FROM user
-        WHERE Type = 'employee';
-    END //
-DELIMITER ;
