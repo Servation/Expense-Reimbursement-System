@@ -29,10 +29,9 @@ public class ManagementEmployeeServlet extends HttpServlet {
 
     }
     private String employeeRequest(int id){
-        List<Reimbursement> reimbursements = DatabaseHandler.getDbHandler().listPending();
+        List<Reimbursement> reimbursements = DatabaseHandler.getDbHandler().listUserReimbursement(id);
         StringBuilder output = new StringBuilder("<div class='container'>");
         for (Reimbursement reimbursement : reimbursements) {
-            if (reimbursement.getUser_ID() == id){
                 output.append("<div>").append("<div class='card w-75 mx-auto mb-3'>" +
                         "<h5 class='card-header'>Reimbursement # "+ reimbursement.getReimbursement_ID()+" | "+ reimbursement.getTitle()+"</h5>" +
                         "<div class='card-body'>" +
@@ -40,7 +39,7 @@ public class ManagementEmployeeServlet extends HttpServlet {
                         "<p class='card-text'><strong>Amount</strong> "+ NumberFormat.getCurrencyInstance().format(reimbursement.getAmount())+"</p>" +
                         "<p class='card-text'>" +
                         "<small class='text-muted'><strong>Date</strong> "+reimbursement.getDate()+"</small></p></div></div>").append("</div>");
-            }
+
         }
         return output + "</div>";
     }
