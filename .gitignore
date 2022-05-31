@@ -3,3 +3,4 @@
 .project
 .settings/
 /target/
+/src/main/java/com/revature/javamail/emailConfig.properties
