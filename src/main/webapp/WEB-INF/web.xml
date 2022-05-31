@@ -112,4 +112,13 @@
     <servlet-name>ManageEmployee</servlet-name>
     <url-pattern>/manage-employee</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ResetPassword</servlet-name>
+    <servlet-class>com.revature.servlets.ResetPasswordServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResetPassword</servlet-name>
+    <url-pattern>/reset</url-pattern>
+  </servlet-mapping>
 </web-app>
