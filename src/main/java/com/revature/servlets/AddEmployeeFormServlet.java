@@ -2,6 +2,7 @@ package com.revature.servlets;
 
 import com.revature.database.DatabaseHandler;
 import com.revature.database.User;
+import com.revature.javamail.JavaMail;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -51,6 +52,8 @@ public class AddEmployeeFormServlet extends HttpServlet {
         String[] checkbox = request.getParameterValues("manager");
         String type = checkbox != null ? "Manager": "Employee";
         DatabaseHandler.getDbHandler().addingUser(firstName,lastName,email,type,username,password);
+        User user = DatabaseHandler.getDbHandler().getUser(username,password);
+        JavaMail.sendUserLogin(user);
         out.close();
     }
 }
