@@ -18,7 +18,7 @@ Title VARCHAR(20) NOT NULL,
 Amount DOUBLE(10, 2) NOT NULL,
 Detail VARCHAR(100) DEFAULT '-----',
 Date VARCHAR(50) NOT NULL,
-Status VARCHAR(10) DEFAULT 'Pending',
+Status ENUM('Denied', 'Pending', 'Approved') DEFAULT 'Pending',
 PRIMARY KEY(Reimbursement_ID),
 FOREIGN KEY (User_ID) REFERENCES user(User_ID));
 
