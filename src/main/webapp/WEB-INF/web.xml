@@ -103,4 +103,13 @@
     <servlet-name>ManageResolved</servlet-name>
     <url-pattern>/manage-resolved</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ManageEmployee</servlet-name>
+    <servlet-class>com.revature.servlets.ManagementEmployeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManageEmployee</servlet-name>
+    <url-pattern>/manage-employee</url-pattern>
+  </servlet-mapping>
 </web-app>

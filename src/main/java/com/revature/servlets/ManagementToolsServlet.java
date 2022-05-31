@@ -4,6 +4,8 @@ import com.revature.database.DatabaseHandler;
 import com.revature.database.User;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -34,7 +36,6 @@ public class ManagementToolsServlet extends HttpServlet {
         } catch (Exception e) {
             request.getRequestDispatcher("logout").include(request, response);
         }
-
     }
 
     private String allEmployees(String username) {
@@ -47,7 +48,12 @@ public class ManagementToolsServlet extends HttpServlet {
                         "<div class='card-body'>" +
                         "<p class='card-text'>Username: " + user.getUsername() + "</p>" +
                         "<p class='card-text'>" + user.getEmail() + "</p>" +
-                        "<a href='#' class='btn btn-primary float-right'>Reimbursements</a></div></div>").append("</div>");
+                        "<form action='manage-employee' method='get'>\n" +
+                        "     <input type='hidden' name='id' value='" + user.getUser_id() + "'>\n" +
+                        "     <input type='submit' value='Reimbursements' class='btn btn-primary float-right' />\n" +
+                        "    </form></div></div>").append("</button>");
+
+
             }
         }
         return output + "</div>";

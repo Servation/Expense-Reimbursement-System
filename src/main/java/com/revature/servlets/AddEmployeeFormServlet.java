@@ -43,7 +43,14 @@ public class AddEmployeeFormServlet extends HttpServlet {
         request.getRequestDispatcher("manager-home.html").include(request, response);
         request.getRequestDispatcher("management-tools.component.html").include(request, response);
         request.getRequestDispatcher("add-employee.component.html").include(request, response);
-        out.write("<div class=\"container text-center text-success\">TODO</div>");
+        String firstName = request.getParameter("first");
+        String lastName = request.getParameter("last");
+        String email = request.getParameter("email");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String[] checkbox = request.getParameterValues("manager");
+        String type = checkbox != null ? "Manager": "Employee";
+        DatabaseHandler.getDbHandler().addingUser(firstName,lastName,email,type,username,password);
         out.close();
     }
 }
