@@ -8,12 +8,12 @@
         <meta attribute = "class-description">Contains user details.</meta>
 
         <id name="user_id" type="int" column="User_ID"><generator class="native"/></id>
-        <property name="username" column="Username" type="string"/>
 
         <property name="first_Name" column="First_Name" type="string"/>
         <property name="last_Name" column="Last_Name" type="string"/>
         <property name="email" column="Email" type="string"/>
         <property name="type" column="Type" type="string"/>
+        <property name="username" column="Username" type="string"/>
         <property name="password" column="Password" type="string"/>
 
     </class>
