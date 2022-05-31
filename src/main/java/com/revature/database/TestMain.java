@@ -1,5 +1,6 @@
 package com.revature.database;
 
+import java.io.File;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -10,6 +11,14 @@ public class TestMain {
     public static void main(String[] args){
         DatabaseHandler dbHandler = DatabaseHandler.getDbHandler();
         User user = dbHandler.getUser("tl123", "admin");
+        String filePath = "com/revature/images";
+        String directory = System.getProperty("user.dir") + "/src/main/java/com/revature/images/";
+        File file = new File(filePath);
+        String path = file.getPath();
+
+        System.out.println(path);
+        System.out.println(directory);
+
         boolean run = true;
         Scanner scanner = new Scanner(System.in);
         int input;
@@ -123,7 +132,7 @@ public class TestMain {
                         String detail = scanner.next();
                         System.out.println("Enter date: ");
                         String date = scanner.next();
-                        dbHandler.addingReimbursement(user.getUser_id(), title, amount, detail, date);
+                        dbHandler.addingReimbursement(user.getUser_id(), title, amount, detail, date, "");
                         System.out.println("adding new reimbursement");
                     }
                     case 11 -> {//approve reimbursement

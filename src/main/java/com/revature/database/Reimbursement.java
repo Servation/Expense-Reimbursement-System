@@ -21,6 +21,8 @@ public class Reimbursement {
     private String date;
     @Column(name = "Status")
     private String status;
+    @Column(name = "Image")
+    private String picture;
 
     public Reimbursement(){}
 
@@ -31,6 +33,16 @@ public class Reimbursement {
         this.detail = detail;
         this.date = date;
         this.status = status;
+    }
+
+    public Reimbursement(int user_ID, String title, double amount, String detail, String date, String status, String picture) {
+        this.user_ID = user_ID;
+        this.title = title;
+        this.amount = amount;
+        this.detail = detail;
+        this.date = date;
+        this.status = status;
+        this.picture = picture;
     }
 
     public int getReimbursement_ID() {
@@ -87,6 +99,14 @@ public class Reimbursement {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getImage() {
+        return picture;
+    }
+
+    public void setImage(String picture) {
+        this.picture = picture;
     }
 
     @Override

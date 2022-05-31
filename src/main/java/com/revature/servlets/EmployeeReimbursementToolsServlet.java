@@ -5,14 +5,24 @@ import com.revature.database.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
+@WebServlet
+@MultipartConfig(
+        fileSizeThreshold = 1024 * 1024 * 1, // 1 MB
+        maxFileSize = 1024 * 1024 * 10,      // 10 MB
+        maxRequestSize = 1024 * 1024 * 100   // 100 MB
+)
 public class EmployeeReimbursementToolsServlet extends HttpServlet {
+    //get absolute
+    String absolute = "D:\\Git\\Project1\\project-1-revature\\src\\main\\webapp\\images\\";
+    String relative = "images\\";
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
@@ -46,7 +56,15 @@ public class EmployeeReimbursementToolsServlet extends HttpServlet {
                 double amount = Double.parseDouble(request.getParameter("amount"));
                 String date = request.getParameter("date");
                 String details = request.getParameter("detail");
-                DatabaseHandler.getDbHandler().addingReimbursement(userID,title,amount,details,date);
+                Part filePart = request.getPart("picture");
+                String picture = filePart.getSubmittedFileName();
+//                Path relativePath = Paths.get("src/main/java/com/revature/images");
+//                System.out.println(relativePath);
+                //need absolute path
+                String absolutePicture = absolute + picture;
+                String relativePicture = relative + picture;
+                filePart.write(absolutePicture);
+                DatabaseHandler.getDbHandler().addingReimbursement(userID,title,amount,details,date, relativePicture);
                 doGet(request, response);
             }
         } else {
