@@ -39,6 +39,17 @@ public class DatabaseHandler {
         return user;
     }
 
+    public User getUserByEmail(String username, String email){
+        User user = null;
+        List<User> userList = listUser();
+        for (User users : userList) {
+            if (users.getUsername().equals(username) && users.getEmail().equals(email)) {
+                user = users;
+            }
+        }
+        return user;
+    }
+
     public List<User> listUser(){
         Transaction transaction = null;
         List<User> userList = new ArrayList<>();
