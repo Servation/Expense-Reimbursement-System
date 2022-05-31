@@ -1,5 +1,5 @@
 <div class="container mt-2">
-    <form action="reimbursement" method="post" enctype="multipart/form-data">
+    <form action="reimbursement" method="post">
         <div class="form-row">
             <div class="col-sm mb-2">
                 <label for="title">Title</label>
@@ -22,16 +22,6 @@
                 <textarea type="text" class="form-control" id="detail" name="detail" maxlength="100" placeholder="Please enter details here." style="resize: none;"></textarea>
             </div>
         </div>
-        <div class="input-group mb-3">
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="inputGroupFile03" name="picture" >
-                <label class="custom-file-label" for="inputGroupFile03"></label>
-            </div>
-        </div>
-        <button class="btn btn-primary" type="submit" id="submitButton" value="upload">Save</button>
-
-        <script>
-
-        </script>
+        <button class="btn btn-primary" type="submit" id="submitButton">Save</button>
     </form>
 </div>
