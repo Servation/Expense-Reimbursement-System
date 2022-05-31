@@ -28,14 +28,14 @@ public class LoginServlet extends HttpServlet {
             out.println("<div class=\"container text-center text-danger\">Username or Password is incorrect</div>");
         } else if (user.getType().equals("Manager")) {
             req.getRequestDispatcher("manager-home.html").include(req, resp);
-            out.print("<div class='text-center'>Welcome " + username + "!</div>");
+            out.print("<div class='text-center'>Welcome " + user.getFirst_Name() +" " + user.getLast_Name() + "!</div>");
             HttpSession session = req.getSession();
             session.setAttribute("username", user.getUsername());
             session.setAttribute("password", user.getPassword());
 
         } else if (user.getType().equals("Employee")) {
             req.getRequestDispatcher("employee-home.html").include(req, resp);
-            out.print("<div class='text-center'>Welcome " + username + "!</div>");
+            out.print("<div class='text-center'>Welcome " + user.getFirst_Name() +" " + user.getLast_Name() + "!</div>");
             HttpSession session = req.getSession();
             session.setAttribute("username", user.getUsername());
             session.setAttribute("password", user.getPassword());
