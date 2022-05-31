@@ -20,23 +20,22 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <div class="navbar-nav justify-content-end">
-                <a class="btn btn-danger" href="index.html">Back</a>
+                <a class="btn btn-danger" href="login.html">Back</a>
             </div>
         </div>
     </div>
 </nav>
 <div class="container-md text-center">
-    <form action="login" method="post" class="form-signin"
+    <form action="reset" method="post" class="form-signin"
           style="display: flex; flex-direction:column; max-width:330px; margin: 0 auto;">
-        <h1 class="h3 mb-3 font-weight-normal" style="margin-top:20px;">Please sign in</h1>
-        <label for="inputUsername" class="sr-only">Username</label>
-        <input type="text" id="inputUsername" class="form-control md-3" placeholder="Username" name="username" required=""
+        <h1 class="h3 mb-3 font-weight-normal" style="margin-top:20px;">Reset your password</h1>
+        <label for="email" class="sr-only">Email</label>
+        <input type="text" id="email" class="form-control md-3" placeholder="Email" name="email" required=""
                autofocus="" style="margin-top:10px">
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control md-3" placeholder="Password" name="password"
+        <label for="userName" class="sr-only">Username</label>
+        <input type="text" id="userName" class="form-control md-3" placeholder="Username" name="username"
                required=""style="margin-top:10px">
-        <button class="btn btn-lg btn-primary btn-block md-3" type="submit"style="margin-top:10px">Sign in</button>
-        <a href="reset.html" class='text-warning'>Reset Password</a>
+        <button class="btn btn-lg btn-warning btn-block md-3" type="submit"style="margin-top:10px">Reset Password</button>
     </form>
 </div>
 
