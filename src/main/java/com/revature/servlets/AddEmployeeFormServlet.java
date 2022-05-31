@@ -51,7 +51,11 @@ public class AddEmployeeFormServlet extends HttpServlet {
         String password = request.getParameter("password");
         String[] checkbox = request.getParameterValues("manager");
         String type = checkbox != null ? "Manager": "Employee";
-        DatabaseHandler.getDbHandler().addingUser(firstName,lastName,email,type,username,password);
+        try{
+            DatabaseHandler.getDbHandler().addingUser(firstName,lastName,email,type,username,password);
+        }catch(Exception e){
+            out.println("<div class=\"container text-center text-danger\">User already exist please use another name or email!</div>");
+        }
         User user = DatabaseHandler.getDbHandler().getUser(username,password);
         JavaMail.sendUserLogin(user);
         out.close();
