@@ -14,6 +14,7 @@
         <property name="detail" column="Detail" type="string"/>
         <property name="date" column="Date" type="string"/>
         <property name="status" column="Status" type="string"/>
+        <property name="image" column="Image" type="string"/>
 
     </class>
 </hibernate-mapping>

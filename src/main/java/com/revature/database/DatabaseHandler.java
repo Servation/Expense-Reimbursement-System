@@ -167,13 +167,13 @@ public class DatabaseHandler {
         }
     }
 
-    public void addingReimbursement(int UserID, String title, double amount, String detail, String date){
+    public void addingReimbursement(int UserID, String title, double amount, String detail, String date, String image){
         Transaction transaction = null;
         Reimbursement newReimbursement = null;
 
         try(Session session = factory.openSession()){
             transaction = session.beginTransaction();
-            newReimbursement = new Reimbursement(UserID, title, amount, detail, date, "Pending");
+            newReimbursement = new Reimbursement(UserID, title, amount, detail, date, "Pending",image);
             session.save(newReimbursement);
             transaction.commit();
         } catch(HibernateException e){
