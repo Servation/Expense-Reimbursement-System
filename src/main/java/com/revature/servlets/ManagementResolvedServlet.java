@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.NumberFormat;
 import java.util.List;
 
 public class ManagementResolvedServlet extends HttpServlet {
@@ -26,7 +27,7 @@ public class ManagementResolvedServlet extends HttpServlet {
                 if (user.getType().equals("Manager")) {
                     request.getRequestDispatcher("manager-home.html").include(request, response);
                     request.getRequestDispatcher("management-tools.component.html").include(request, response);
-                    out.println(manageResolved(user.getUser_id()));
+                    out.println(manageResolved());
                 } else {
                     throw new Exception();
                 }
@@ -39,13 +40,20 @@ public class ManagementResolvedServlet extends HttpServlet {
         }
     }
 
-    private String manageResolved(int id){
-        // TODO: 5/29/2022  
-        List<Reimbursement> reimbursements = DatabaseHandler.getDbHandler().listUserReimbursement(id);
+    private String manageResolved(){
+        List<Reimbursement> reimbursements = DatabaseHandler.getDbHandler().listReimbursement();
         StringBuilder output = new StringBuilder("<div class='container'>");
         for (Reimbursement reimbursement : reimbursements) {
-            if (!(reimbursement.getStatus().equals("Pending") || reimbursement.getUser_ID() == id)){
-                output.append("<div>").append(reimbursement).append("</div>");
+            if (!reimbursement.getStatus().equals("Pending")){
+                output.append("<div>").append("<div class='card w-75 mx-auto mb-3'>" +
+                        "<h5 class='card-header'>Reimbursement # "+reimbursement.getReimbursement_ID()+" | "+reimbursement.getTitle()+"</h5>" +
+                        "<div class='card-body'>" +
+                        "<p class='card-text'><strong>Description</strong> "+reimbursement.getDetail()+"</p>" +
+                        "<p class='card-text'><strong>Amount</strong> "+ NumberFormat.getCurrencyInstance().format(reimbursement.getAmount())+"</p>" +
+                        "<p class='card-text'><strong>Status</strong> "+reimbursement.getStatus()+"</p>" +
+                        "<p class='card-text'>" +
+                        "<small class='text-muted'><strong>Date</strong> "+reimbursement.getDate()+"</small>\n" +
+                        "</p></div></div>").append("</div>");
             }
         }
         return output + "</div>";
