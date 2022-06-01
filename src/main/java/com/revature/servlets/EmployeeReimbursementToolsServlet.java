@@ -60,10 +60,18 @@ public class EmployeeReimbursementToolsServlet extends HttpServlet {
                 String details = request.getParameter("detail");
                 Part filePart = request.getPart("picture");
                 String picture = filePart.getSubmittedFileName();
-                String absolutePicture = absolute + picture;
-                String relativePicture = relative + picture;
-                filePart.write(absolutePicture);
-                DatabaseHandler.getDbHandler().addingReimbursement(userID,title,amount,details,date, relativePicture);
+//                Path relativePath = Paths.get("src/main/java/com/revature/images");
+//                System.out.println(relativePath);
+                //need absolute path
+                if(!picture.isEmpty()){
+                    String absolutePicture = absolute + picture;
+                    String relativePicture = relative + picture;
+                    filePart.write(absolutePicture);
+                    DatabaseHandler.getDbHandler().addingReimbursement(userID,title,amount,details,date, relativePicture);
+                }
+                else{
+                    DatabaseHandler.getDbHandler().addingReimbursement(userID,title,amount,details,date, "");
+                }
                 doGet(request, response);
             }
         } else {
