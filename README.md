@@ -53,5 +53,5 @@ Finance managers can log in and view all reimbursement requests and history for
  - Hibernate
 
 ## Contributor
-Jeffrey Saelee
-Thomas Lin
+-Jeffrey Saelee
+-Thomas Lin
