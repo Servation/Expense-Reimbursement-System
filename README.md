@@ -54,5 +54,4 @@ Finance managers can log in and view all reimbursement requests and history for
 
 ## Contributor
 >Jeffrey Saelee
-
 >Thomas Lin
