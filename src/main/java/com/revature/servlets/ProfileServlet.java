@@ -17,7 +17,7 @@ public class ProfileServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession(false);
         try {
-            if (session != null) {
+            if (session != null && !session.isNew()) {
                 String username = session.getAttribute("username").toString();
                 String password = session.getAttribute("password").toString();
                 User user = DatabaseHandler.getDbHandler().getUser(username, password);
@@ -28,7 +28,7 @@ public class ProfileServlet extends HttpServlet {
                     request.getRequestDispatcher("manager-home.html").include(request, response);
                     out.println(getProfile(user));
                 } else {
-                    throw new Exception();
+                    throw new NoLoginException();
                 }
             }
         } catch (Exception e) {
