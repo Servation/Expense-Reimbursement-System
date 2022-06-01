@@ -16,9 +16,10 @@ public class AddEmployeeFormServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         try {
+
             PrintWriter out = response.getWriter();
             HttpSession session = request.getSession(false);
-            if (session != null && !session.isNew()) {
+            if (session != null) {
                 String username = session.getAttribute("username").toString();
                 String password = session.getAttribute("password").toString();
                 User user = DatabaseHandler.getDbHandler().getUser(username, password);
@@ -27,10 +28,10 @@ public class AddEmployeeFormServlet extends HttpServlet {
                     request.getRequestDispatcher("management-tools.component.html").include(request, response);
                     request.getRequestDispatcher("add-employee.component.html").include(request, response);
                 } else {
-                    throw new NoLoginException();
+                    throw new Exception();
                 }
             } else {
-                throw new NoLoginException();
+                throw new Exception();
             }
             out.close();
         } catch (Exception e){
