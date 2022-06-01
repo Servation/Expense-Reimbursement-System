@@ -70,7 +70,8 @@ public class ManagementPendingServlet extends HttpServlet {
                         "<h6 class='card-title'><strong>User# " + reimbursement.getUser_ID() + "</strong></h6>\n" +
                         "<p class='card-text'><strong>Description</strong> " + reimbursement.getDetail() + "</p>\n" +
                         "<p class='card-text'><strong>Amount</strong> " + NumberFormat.getCurrencyInstance().format(reimbursement.getAmount()) + "</p>\n" +
-                        (reimbursement.getImage().isEmpty() ? "":("<img src='" + reimbursement.getImage() + "' class=\"card-img-bottom\" height=" + 600 + " width=" + 200 + ">")) +
+                        (reimbursement.getImage().isEmpty() ? "":("<img src='" + reimbursement.getImage() +
+                                "' class=\"card-img-bottom\" style=\"object-fit:contain\" height=" + 600 + " width=" + 200 + ">")) +
                         "<p class='card-text'><small class='text-muted'><strong>Date</strong> " + reimbursement.getDate() + "</small></p>\n" +
                         "<button href='#' class='btn btn-success float-right ml-2' id='approvedID"+reimbursement.getReimbursement_ID()+"'>Approve</button>\n" +
                         "<button href='#' class='btn btn-danger float-right ml-2' id='deniedID"+reimbursement.getReimbursement_ID()+"'>Deny</button></div>\n").append("</div>\n");
