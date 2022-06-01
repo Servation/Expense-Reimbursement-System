@@ -33,30 +33,46 @@ public class AddEmployeeFormServlet extends HttpServlet {
                 throw new NoLoginException();
             }
             out.close();
-        } catch (Exception e){
+        } catch (Exception e) {
             request.getRequestDispatcher("logout").include(request, response);
         }
     }
+
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        request.getRequestDispatcher("manager-home.html").include(request, response);
-        request.getRequestDispatcher("management-tools.component.html").include(request, response);
-        request.getRequestDispatcher("add-employee.component.html").include(request, response);
-        String firstName = request.getParameter("first");
-        String lastName = request.getParameter("last");
-        String email = request.getParameter("email");
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String[] checkbox = request.getParameterValues("manager");
-        String type = checkbox != null ? "Manager": "Employee";
-        try{
-            DatabaseHandler.getDbHandler().addingUser(firstName,lastName,email,type,username,password);
-        }catch(Exception e){
-            out.println("<div class=\"container text-center text-danger\">User already exist please use another name or email!</div>");
+        try {
+            PrintWriter out = response.getWriter();
+            HttpSession session = request.getSession(false);
+            if (session != null && !session.isNew()) {
+                String username = session.getAttribute("username").toString();
+                String password = session.getAttribute("password").toString();
+                User user = DatabaseHandler.getDbHandler().getUser(username, password);
+                if (user.getType().equals("Manager")) {
+                    request.getRequestDispatcher("manager-home.html").include(request, response);
+                    request.getRequestDispatcher("management-tools.component.html").include(request, response);
+                    request.getRequestDispatcher("add-employee.component.html").include(request, response);
+                    String firstName = request.getParameter("first");
+                    String lastName = request.getParameter("last");
+                    String email = request.getParameter("email");
+                    String addUsername = request.getParameter("username");
+                    String addPassword = request.getParameter("password");
+                    String[] checkbox = request.getParameterValues("manager");
+                    String type = checkbox != null ? "Manager" : "Employee";
+                    DatabaseHandler.getDbHandler().addingUser(firstName, lastName, email, type, addUsername,
+                            addPassword);
+                    out.println("<div class=' container text-success'>User added</div>");
+                    User newUser = DatabaseHandler.getDbHandler().getUser(username, password);
+                    JavaMail.sendUserLogin(newUser);
+                } else {
+                    throw new NoLoginException();
+                }
+            } else {
+                throw new NoLoginException();
+            }
+            out.close();
+        } catch (Exception e) {
+            request.getRequestDispatcher("logout").include(request, response);
         }
-        User user = DatabaseHandler.getDbHandler().getUser(username,password);
-        JavaMail.sendUserLogin(user);
-        out.close();
+
     }
 }
