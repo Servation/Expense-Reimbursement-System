@@ -24,7 +24,7 @@ public class ManagementPendingServlet extends HttpServlet {
         try {
             PrintWriter out = response.getWriter();
             HttpSession session = request.getSession(false);
-            if (session != null) {
+            if (session != null && !session.isNew()) {
                 String username = session.getAttribute("username").toString();
                 String password = session.getAttribute("password").toString();
                 User user = DatabaseHandler.getDbHandler().getUser(username, password);
@@ -33,10 +33,10 @@ public class ManagementPendingServlet extends HttpServlet {
                     request.getRequestDispatcher("management-tools.component.html").include(request, response);
                     out.println(allPending(user.getUser_id()));
                 } else {
-                    throw new Exception();
+                    throw new NoLoginException();
                 }
             } else {
-                throw new Exception();
+                throw new NoLoginException();
             }
             out.close();
         } catch (Exception e) {

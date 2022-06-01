@@ -20,7 +20,7 @@ public class EmployeePendingServlet extends HttpServlet {
         try {
             PrintWriter out = response.getWriter();
             HttpSession session = request.getSession(false);
-            if (session != null) {
+            if (session != null && !session.isNew()) {
                 String username = session.getAttribute("username").toString();
                 String password = session.getAttribute("password").toString();
                 User user = DatabaseHandler.getDbHandler().getUser(username, password);
@@ -29,10 +29,10 @@ public class EmployeePendingServlet extends HttpServlet {
                     request.getRequestDispatcher("employee-reimbursement-controls.component.html").include(request, response);
                     out.println(employeePending(user.getUser_id()));
                 } else {
-                    throw new Exception();
+                    throw new NoLoginException();
                 }
             } else {
-                throw new Exception();
+                throw new NoLoginException();
             }
             out.close();
         } catch (Exception e){
@@ -45,14 +45,14 @@ public class EmployeePendingServlet extends HttpServlet {
         StringBuilder output = new StringBuilder("<div class='container'>");
         for (Reimbursement reimbursement : reimbursements) {
             if (reimbursement.getUser_ID() == id){
-                output.append("<div>").append("<div class='card w-75 mx-auto mb-3'>" +
-                        "<h5 class='card-header'>Reimbursement # "+ reimbursement.getReimbursement_ID()+" | "+ reimbursement.getTitle()+"</h5>" +
-                        "<div class='card-body'>" +
-                        "<p class='card-text'><strong>Description</strong> "+reimbursement.getDetail()+"</p>" +
-                        "<p class='card-text'><strong>Amount</strong> "+ NumberFormat.getCurrencyInstance().format(reimbursement.getAmount())+"</p>" +
-                        "<p class='card-text'>" +
-                        (reimbursement.getImage().isEmpty() ? "":("<img src='" + reimbursement.getImage() + "' class=\"card-img-bottom\" height=" + 600 + " width=" + 200 + ">")) +
-                        "<small class='text-muted'><strong>Date</strong> "+reimbursement.getDate()+"</small></p></div></div>").append("</div>");
+                output.append("<div>").append("<div class='card w-75 mx-auto mb-3'>\n" +
+                        "<h5 class='card-header'>Reimbursement # "+ reimbursement.getReimbursement_ID()+" | "+ reimbursement.getTitle()+"</h5>\n" +
+                        "<div class='card-body'>\n" +
+                        "<p class='card-text'><strong>Description</strong> "+reimbursement.getDetail()+"</p>\n" +
+                        "<p class='card-text'><strong>Amount</strong> "+ NumberFormat.getCurrencyInstance().format(reimbursement.getAmount())+"</p>\n" +
+                        "<p class='card-text'>\n" +
+                        (reimbursement.getImage().isEmpty() ? "":("<img src='" + reimbursement.getImage() + "' class=\"card-img-bottom\" height=" + 600 + " width=" + 200 + ">\n")) +
+                        "<small class='text-muted'><strong>Date</strong>"+reimbursement.getDate()+"</small></p></div></div>").append("</div>");
             }
         }
         return output + "</div>";

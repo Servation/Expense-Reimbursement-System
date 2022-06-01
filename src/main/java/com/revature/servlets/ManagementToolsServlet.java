@@ -20,7 +20,7 @@ public class ManagementToolsServlet extends HttpServlet {
         try {
             PrintWriter out = response.getWriter();
             HttpSession session = request.getSession(false);
-            if (session != null) {
+            if (session != null && !session.isNew()) {
                 String username = session.getAttribute("username").toString();
                 String password = session.getAttribute("password").toString();
                 User user = DatabaseHandler.getDbHandler().getUser(username, password);
@@ -29,7 +29,7 @@ public class ManagementToolsServlet extends HttpServlet {
                     request.getRequestDispatcher("management-tools.component.html").include(request, response);
                     out.println(allEmployees(username));
                 } else {
-                    throw new Exception();
+                    throw new NoLoginException();
                 }
             }
             out.close();
@@ -43,15 +43,15 @@ public class ManagementToolsServlet extends HttpServlet {
         StringBuilder output = new StringBuilder("<div class='container'>");
         for (User user : users) {
             if (!user.getUsername().equals(username)) {
-                output.append("<div>").append("<div class='card w-75 mx-auto mb-3'>" +
-                        "<h5 class='card-header'>" + user.getFirst_Name() + " " + user.getLast_Name() + "#" + user.getUser_id() + "</h5>" +
+                output.append("<div>").append("<div class='card w-75 mx-auto mb-3'>\n" +
+                        "<h5 class='card-header'>" + user.getFirst_Name() + " " + user.getLast_Name() + "#" + user.getUser_id() + "</h5>\n" +
                         "<div class='card-body'>" +
                         "<p class='card-text'>Username: " + user.getUsername() + "</p>" +
                         "<p class='card-text'>" + user.getEmail() + "</p>" +
                         "<form action='manage-employee' method='get'>\n" +
-                        "     <input type='hidden' name='id' value='" + user.getUser_id() + "'>\n" +
-                        "     <input type='submit' value='Reimbursements' class='btn btn-primary float-right' />\n" +
-                        "    </form></div></div>").append("</button>");
+                        "<input type='hidden' name='id' value='" + user.getUser_id() + "'>\n" +
+                        "<input type='submit' value='Reimbursements' class='btn btn-primary float-right' />\n" +
+                        "</form></div></div>").append("</button>");
 
 
             }
