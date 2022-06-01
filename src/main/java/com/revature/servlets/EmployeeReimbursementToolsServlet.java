@@ -15,19 +15,19 @@ import java.nio.file.Paths;
 
 @WebServlet
 @MultipartConfig(
-        fileSizeThreshold = 1024 * 1024, // 1 MB
+        fileSizeThreshold = 1024 * 1024 * 1, // 1 MB
         maxFileSize = 1024 * 1024 * 10,      // 10 MB
         maxRequestSize = 1024 * 1024 * 100   // 100 MB
 )
 public class EmployeeReimbursementToolsServlet extends HttpServlet {
     //get absolute
-    String absolute = "D:\\Google Drive\\Ravature\\project-1\\src\\main\\webapp\\";
+    String absolute = "D:\\Git\\Project1\\project-1-revature\\src\\main\\webapp\\images\\";
     String relative = "images\\";
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession(false);
-        if (session != null && !session.isNew()) {
+        if (session != null) {
             String username = session.getAttribute("username").toString();
             String password = session.getAttribute("password").toString();
             User user = DatabaseHandler.getDbHandler().getUser(username, password);
@@ -35,8 +35,6 @@ public class EmployeeReimbursementToolsServlet extends HttpServlet {
                 request.getRequestDispatcher("employee-home.html").include(request, response);
                 request.getRequestDispatcher("employee-reimbursement-controls.component.html").include(request, response);
                 request.getRequestDispatcher("employee-reimbursement-form.component.html").include(request,response);
-            } else {
-                request.getRequestDispatcher("logout").include(request, response);
             }
         } else {
             request.getRequestDispatcher("logout").include(request, response);
@@ -60,6 +58,9 @@ public class EmployeeReimbursementToolsServlet extends HttpServlet {
                 String details = request.getParameter("detail");
                 Part filePart = request.getPart("picture");
                 String picture = filePart.getSubmittedFileName();
+//                Path relativePath = Paths.get("src/main/java/com/revature/images");
+//                System.out.println(relativePath);
+                //need absolute path
                 String absolutePicture = absolute + picture;
                 String relativePicture = relative + picture;
                 filePart.write(absolutePicture);

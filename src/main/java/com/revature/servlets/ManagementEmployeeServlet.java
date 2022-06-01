@@ -21,27 +21,11 @@ import java.util.List;
 public class ManagementEmployeeServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-        try {
-            PrintWriter out = response.getWriter();
-            HttpSession session = request.getSession(false);
-            if (session != null && !session.isNew()) {
-                String username = session.getAttribute("username").toString();
-                String password = session.getAttribute("password").toString();
-                User user = DatabaseHandler.getDbHandler().getUser(username, password);
-                if (user.getType().equals("Manager")) {
-                    request.getRequestDispatcher("manager-home.html").include(request, response);
-                    request.getRequestDispatcher("management-tools.component.html").include(request, response);
-                    int employeeID = Integer.parseInt(request.getParameter("id"));
-                    out.println(employeeRequest(employeeID));
-                } else {
-                    throw new  NoLoginException();
-                }
-            } else {
-                throw new  NoLoginException();
-            }
-        } catch (Exception e) {
-            request.getRequestDispatcher("logout").include(request, response);
-        }
+        PrintWriter out = response.getWriter();
+        request.getRequestDispatcher("manager-home.html").include(request, response);
+        request.getRequestDispatcher("management-tools.component.html").include(request, response);
+        int employeeID = Integer.parseInt(request.getParameter("id"));
+        out.println(employeeRequest(employeeID));
 
     }
     private String employeeRequest(int id){
