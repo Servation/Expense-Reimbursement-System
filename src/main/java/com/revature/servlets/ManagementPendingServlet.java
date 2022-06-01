@@ -3,6 +3,7 @@ package com.revature.servlets;
 import com.revature.database.DatabaseHandler;
 import com.revature.database.Reimbursement;
 import com.revature.database.User;
+import com.revature.javamail.JavaMail;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -49,12 +50,14 @@ public class ManagementPendingServlet extends HttpServlet {
         String status = request.getParameter("status");
         System.out.println(reimbursementID);
         System.out.println(status);
+        String email = DatabaseHandler.getDbHandler().getEmailByTransactionId(reimbursementID);
         if (status.equals("Deny")) {
             DatabaseHandler.getDbHandler().approveReimbursement(reimbursementID, "Denied");
         } else {
             DatabaseHandler.getDbHandler().approveReimbursement(reimbursementID, "Approved");
         }
-
+        if (!email.isEmpty())
+            JavaMail.sendNotification(email, "Reimbursement ID: " + reimbursementID + "\nStatus: " + status);
     }
 
     private String allPending(int id) {

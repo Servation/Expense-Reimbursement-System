@@ -52,7 +52,7 @@ public class EmployeePendingServlet extends HttpServlet {
                         "<p class='card-text'><strong>Amount</strong> "+ NumberFormat.getCurrencyInstance().format(reimbursement.getAmount())+"</p>\n" +
                         "<p class='card-text'>\n" +
                         (reimbursement.getImage().isEmpty() ? "":("<img src='" + reimbursement.getImage() + "' class=\"card-img-bottom\" height=" + 600 + " width=" + 200 + ">\n")) +
-                        "<small class='text-muted'><strong>Date</strong>"+reimbursement.getDate()+"</small></p></div></div>").append("</div>");
+                        "<small class='text-muted'><strong>Date</strong> "+reimbursement.getDate()+"</small></p></div></div>").append("</div>");
             }
         }
         return output + "</div>";

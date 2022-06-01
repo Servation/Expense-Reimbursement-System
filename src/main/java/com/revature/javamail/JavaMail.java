@@ -56,4 +56,27 @@ public class JavaMail {
         EmailUtil.sendEmail(session, toEmail,"Password Reset", emailBody);
 
     }
+
+    public static void sendNotification(String email, String info) {
+        String fromEmail = "JLRevature@gmail.com";
+        String password = "jlrevature123";
+
+        System.out.println("SSLEmail Start");
+        Properties props = new Properties();
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.socketFactory.port", "465");
+        props.put("mail.smtp.socketFactory.class",
+                "javax.net.ssl.SSLSocketFactory");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.port", "465");
+        Authenticator auth = new Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(fromEmail, password);
+            }
+        };
+        Session session = Session.getDefaultInstance(props, auth);
+        System.out.println("Session created");
+        EmailUtil.sendEmail(session, email,"Reimbursement Request Update", info);
+
+    }
 }
