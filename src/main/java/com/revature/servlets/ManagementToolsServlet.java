@@ -31,6 +31,8 @@ public class ManagementToolsServlet extends HttpServlet {
                 } else {
                     throw new NoLoginException();
                 }
+            } else {
+                throw new NoLoginException();
             }
             out.close();
         } catch (Exception e) {

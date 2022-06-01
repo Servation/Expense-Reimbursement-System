@@ -21,24 +21,30 @@ import java.nio.file.Paths;
 )
 public class EmployeeReimbursementToolsServlet extends HttpServlet {
     //get absolute
-    String absolute = "D:\\Google Drive\\Ravature\\project-1\\src\\main\\webapp\\";
+    String absolute = "D:\\Google Drive\\Ravature\\project-1\\src\\main\\webapp\\images\\";
     String relative = "images\\";
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession(false);
-        if (session != null && !session.isNew()) {
-            String username = session.getAttribute("username").toString();
-            String password = session.getAttribute("password").toString();
-            User user = DatabaseHandler.getDbHandler().getUser(username, password);
-            if (user.getType().equals("Employee")) {
-                request.getRequestDispatcher("employee-home.html").include(request, response);
-                request.getRequestDispatcher("employee-reimbursement-controls.component.html").include(request, response);
-                request.getRequestDispatcher("employee-reimbursement-form.component.html").include(request,response);
+        try {
+            if (session != null && !session.isNew()) {
+                String username = session.getAttribute("username").toString();
+                String password = session.getAttribute("password").toString();
+                User user = DatabaseHandler.getDbHandler().getUser(username, password);
+                if (user.getType().equals("Employee")) {
+                    request.getRequestDispatcher("employee-home.html").include(request, response);
+                    request.getRequestDispatcher("employee-reimbursement-controls.component.html").include(request,
+                            response);
+                    request.getRequestDispatcher("employee-reimbursement-form.component.html").include(request,
+                            response);
+                } else {
+                    throw new NoLoginException();
+                }
             } else {
-                request.getRequestDispatcher("logout").include(request, response);
+                throw new NoLoginException();
             }
-        } else {
+        } catch (Exception e) {
             request.getRequestDispatcher("logout").include(request, response);
         }
         out.close();
@@ -49,6 +55,11 @@ public class EmployeeReimbursementToolsServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession(false);
         if (session != null) {
+            request.getRequestDispatcher("employee-home.html").include(request, response);
+            request.getRequestDispatcher("employee-reimbursement-controls.component.html").include(request,
+                    response);
+            request.getRequestDispatcher("employee-reimbursement-form.component.html").include(request,
+                    response);
             String username = session.getAttribute("username").toString();
             String password = session.getAttribute("password").toString();
             User user = DatabaseHandler.getDbHandler().getUser(username, password);
@@ -60,19 +71,17 @@ public class EmployeeReimbursementToolsServlet extends HttpServlet {
                 String details = request.getParameter("detail");
                 Part filePart = request.getPart("picture");
                 String picture = filePart.getSubmittedFileName();
-//                Path relativePath = Paths.get("src/main/java/com/revature/images");
-//                System.out.println(relativePath);
-                //need absolute path
                 if(!picture.isEmpty()){
                     String absolutePicture = absolute + picture;
                     String relativePicture = relative + picture;
                     filePart.write(absolutePicture);
                     DatabaseHandler.getDbHandler().addingReimbursement(userID,title,amount,details,date, relativePicture);
+                    out.println("<div class=' container text-success'>Reimbursement request added</div>");
                 }
                 else{
                     DatabaseHandler.getDbHandler().addingReimbursement(userID,title,amount,details,date, "");
+                    out.println("<div class=' container text-success'>Reimbursement request added</div>");
                 }
-                doGet(request, response);
             }
         } else {
             request.getRequestDispatcher("logout").include(request, response);

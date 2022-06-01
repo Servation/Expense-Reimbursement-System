@@ -30,6 +30,8 @@ public class ProfileServlet extends HttpServlet {
                 } else {
                     throw new NoLoginException();
                 }
+            }else {
+                throw new NoLoginException();
             }
         } catch (Exception e) {
             request.getRequestDispatcher("logout").include(request, response);
@@ -42,25 +44,38 @@ public class ProfileServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession(false);
         try {
-            if (session != null) {
+            if (session != null && !session.isNew()) {
                 String username = session.getAttribute("username").toString();
                 String password = session.getAttribute("password").toString();
                 User user = DatabaseHandler.getDbHandler().getUser(username, password);
+                if (user.getType().equals("Employee")) {
+                    request.getRequestDispatcher("employee-home.html").include(request, response);
+                    out.println(getProfile(user));
+                } else if (user.getType().equals("Manager")) {
+                    request.getRequestDispatcher("manager-home.html").include(request, response);
+                    out.println(getProfile(user));
+                } else {
+                    throw new NoLoginException();
+                }
                 String newUsername = request.getParameter("username");
                 String newPassword = request.getParameter("password");
                 String newEmail = request.getParameter("email");
                 if (!user.getUsername().equals(newUsername) || newUsername.isEmpty()) {
                     DatabaseHandler.getDbHandler().updateUsername(user.getUser_id(), newUsername);
                     session.setAttribute("username", newUsername);
+                    out.println("<div class=' container text-success'>Username updated</div>");
                 }
                 if (!user.getPassword().equals(newPassword) || newPassword.isEmpty()) {
                     DatabaseHandler.getDbHandler().updatePassword(user.getUser_id(), newPassword);
                     session.setAttribute("password", newPassword);
+                    out.println("<div class=' container text-success'>Password updated</div>");
                 }
                 if (!user.getEmail().equals(newEmail) || newEmail.isEmpty()) {
                     DatabaseHandler.getDbHandler().updateEmail(user.getUser_id(), newEmail);
+                    out.println("<div class=' container text-success'>Email updated</div>");
                 }
-                doGet(request, response);
+            } else {
+                throw new NoLoginException();
             }
         } catch (Exception e) {
             request.getRequestDispatcher("logout").include(request, response);
@@ -75,7 +90,7 @@ public class ProfileServlet extends HttpServlet {
         String userName = user.getUsername();
         String password = user.getPassword();
         String email = user.getEmail();
-        String out = "";
+        String out;
 
         out = "<div class=\"container mt-2\">\n" +
                 "   <form action=\"profile\" method=\"post\">\n" +
