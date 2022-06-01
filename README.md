@@ -1,4 +1,4 @@
-﻿# Project 1: Expense Reimbursement System - Enterpric
+﻿# Project 1: Expense Reimbursement System - Enterprise
  
  ## Project Description
  Expense Reimbursement System (ERS)In this document, all requirements and required
@@ -53,5 +53,6 @@ Finance managers can log in and view all reimbursement requests and history for
  - Hibernate
 
 ## Contributor
--Jeffrey Saelee
--Thomas Lin
+>Jeffrey Saelee
+
+>Thomas Lin
