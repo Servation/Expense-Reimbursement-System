@@ -51,3 +51,7 @@ Finance managers can log in and view all reimbursement requests and history for
  - JDBC
  - Tomcat
  - Hibernate
+
+## Contributor
+Jeffrey Saelee
+Thomas Lin
