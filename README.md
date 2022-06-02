@@ -27,23 +27,24 @@ Finance managers can log in and view all reimbursement requests and history for
   - View their own pending request
   - View their own resolved request
   - Upload an image of their receipt as part of the reimbursement request
-  - Receive an email when one of their reimbursement si resolved
+  - Receive an email when one of their reimbursement is resolved
   - View their information
   - Update their information
 - As a Manager:
   - View manager home page
-  - View all employee
+  - View all employees
   - Approve/Deny pending reimbursement
   - View all pending reimbursement
   - View all resolved reimbursement
   - View reimbursement of a specific employee
   - View an image of the reciept of a reimbursement request
-  - Register an empployee and send an email to that employee with his credentials
+  - Register an employee and send an email to that employee with his credentials
 
 ## Technology used
  - Java 1.8
  - JavaScript
  - Servlets
+ - Maven
  - SQL
  - HTML/CSS
  - Bootstrap
@@ -56,5 +57,4 @@ Finance managers can log in and view all reimbursement requests and history for
 
 ## Contributor
 >Jeffrey Saelee
-
 >Thomas Lin
