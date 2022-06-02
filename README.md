@@ -1,7 +1,6 @@
-﻿# Project 1: Expense Reimbursement System - Enterprise
- 
- ## Project Description
- Expense Reimbursement System (ERS)
+# Project 1: Expense Reimbursement System - Enterprise
+
+## Description
 
 The Expense Reimbursement System will manage the process of reimbursing employees
     for expenses incurred while on company time.
@@ -12,7 +11,6 @@ Employees in the company can login and submit requests for reimbursement and
 Finance managers can log in and view all reimbursement requests and history for
     all employees in the company, and they are authorized to approve and deny requests for expense
     reimbursement.
-
 
 ## Features
 - As an User you can:
@@ -52,6 +50,9 @@ Finance managers can log in and view all reimbursement requests and history for
  - Tomcat
  - Hibernate
  - JQuery
+
+![Management tools page](../image-assets/management-tools-page.png?raw=true)
+[More images of working project](https://github.com/Servation/Expense-Reimbursement-System/tree/image-assets)
 
 ## Contributor
 >Jeffrey Saelee
