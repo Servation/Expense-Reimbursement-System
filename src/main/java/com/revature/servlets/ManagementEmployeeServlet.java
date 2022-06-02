@@ -54,7 +54,7 @@ public class ManagementEmployeeServlet extends HttpServlet {
                         "<p class='card-text'><strong>Description</strong> "+reimbursement.getDetail()+"</p>" +
                         "<p class='card-text'><strong>Status</strong> "+reimbursement.getStatus()+"</p>" +
                         "<p class='card-text'><strong>Amount</strong> "+ NumberFormat.getCurrencyInstance().format(reimbursement.getAmount())+"</p>" +
-                        "<p class='card-text'>" + (reimbursement.getImage().isEmpty() ? "":("<img src='" + reimbursement.getImage() + "' class=\"card-img-bottom\" height=" + 600 + " width=" + 200 + ">")) +
+                        "<p class='card-text'>" + (reimbursement.getImage().isEmpty() ? "":("<img src='" + reimbursement.getImage() + "' class=\"card-img-bottom\" style=\"object-fit:contain\" height=" + 600 + " width=" + 200 + ">")) +
                         "<small class='text-muted'><strong>Date</strong> "+reimbursement.getDate()+"</small></p></div></div>").append("</div>");
 
         }

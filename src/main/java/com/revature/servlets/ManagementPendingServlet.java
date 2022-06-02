@@ -3,6 +3,7 @@ package com.revature.servlets;
 import com.revature.database.DatabaseHandler;
 import com.revature.database.Reimbursement;
 import com.revature.database.User;
+import com.revature.javamail.JavaMail;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -49,12 +50,14 @@ public class ManagementPendingServlet extends HttpServlet {
         String status = request.getParameter("status");
         System.out.println(reimbursementID);
         System.out.println(status);
+        String email = DatabaseHandler.getDbHandler().getEmailByTransactionId(reimbursementID);
         if (status.equals("Deny")) {
             DatabaseHandler.getDbHandler().approveReimbursement(reimbursementID, "Denied");
         } else {
             DatabaseHandler.getDbHandler().approveReimbursement(reimbursementID, "Approved");
         }
-
+        if (!email.isEmpty())
+            JavaMail.sendNotification(email, "Reimbursement ID: " + reimbursementID + "\nStatus: " + status);
     }
 
     private String allPending(int id) {
@@ -67,7 +70,8 @@ public class ManagementPendingServlet extends HttpServlet {
                         "<h6 class='card-title'><strong>User# " + reimbursement.getUser_ID() + "</strong></h6>\n" +
                         "<p class='card-text'><strong>Description</strong> " + reimbursement.getDetail() + "</p>\n" +
                         "<p class='card-text'><strong>Amount</strong> " + NumberFormat.getCurrencyInstance().format(reimbursement.getAmount()) + "</p>\n" +
-                        (reimbursement.getImage().isEmpty() ? "":("<img src='" + reimbursement.getImage() + "' class=\"card-img-bottom\" height=" + 600 + " width=" + 200 + ">")) +
+                        (reimbursement.getImage().isEmpty() ? "":("<img src='" + reimbursement.getImage() +
+                                "' class=\"card-img-bottom\" style=\"object-fit:contain\" height=" + 600 + " width=" + 200 + ">")) +
                         "<p class='card-text'><small class='text-muted'><strong>Date</strong> " + reimbursement.getDate() + "</small></p>\n" +
                         "<button href='#' class='btn btn-success float-right ml-2' id='approvedID"+reimbursement.getReimbursement_ID()+"'>Approve</button>\n" +
                         "<button href='#' class='btn btn-danger float-right ml-2' id='deniedID"+reimbursement.getReimbursement_ID()+"'>Deny</button></div>\n").append("</div>\n");

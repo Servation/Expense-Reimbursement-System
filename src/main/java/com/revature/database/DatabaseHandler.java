@@ -208,4 +208,19 @@ public class DatabaseHandler {
             e.printStackTrace();
         }
     }
+
+    public String getEmailByTransactionId(int id) {
+        Transaction transaction = null;
+
+        try (Session session = factory.openSession()) {
+            transaction = session.beginTransaction();
+            Reimbursement reimbursement = session.get(Reimbursement.class, id);
+            User user = session.get(User.class, reimbursement.getUser_ID());
+            return user.getEmail();
+        } catch (HibernateException e) {
+            if(transaction != null) transaction.rollback();
+            e.printStackTrace();
+        }
+        return "";
+    }
 }
