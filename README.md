@@ -42,6 +42,7 @@ Finance managers can log in and view all reimbursement requests and history for
 
 ## Technology used
  - Java 1.8
+ - JavaScript
  - Servlets
  - SQL
  - HTML/CSS
@@ -51,6 +52,7 @@ Finance managers can log in and view all reimbursement requests and history for
  - JDBC
  - Tomcat
  - Hibernate
+ - JQuery
 
 ## Contributor
 >Jeffrey Saelee
