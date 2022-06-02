@@ -1,9 +1,7 @@
 ﻿# Project 1: Expense Reimbursement System - Enterprise
  
  ## Project Description
- Expense Reimbursement System (ERS)In this document, all requirements and required
-    technologies pertaining the first full stack individual project of your
-    training will be presented. All requirements are mandatory.
+ Expense Reimbursement System (ERS)
 
 The Expense Reimbursement System will manage the process of reimbursing employees
     for expenses incurred while on company time.
@@ -57,4 +55,5 @@ Finance managers can log in and view all reimbursement requests and history for
 
 ## Contributor
 >Jeffrey Saelee
+
 >Thomas Lin
