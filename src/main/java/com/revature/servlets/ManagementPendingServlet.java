@@ -32,6 +32,8 @@ public class ManagementPendingServlet extends HttpServlet {
                 if (user.getType().equals("Manager")) {
                     request.getRequestDispatcher("manager-home.html").include(request, response);
                     request.getRequestDispatcher("management-tools.component.html").include(request, response);
+                    out.println("<script>\n\tdocument.getElementById('management-tools').classList.toggle('active')\n</script>");
+                    out.println("<script>\n\tdocument.getElementById('pending-link').classList.toggle('active')\n</script>");
                     out.println(allPending(user.getUser_id()));
                 } else {
                     throw new NoLoginException();

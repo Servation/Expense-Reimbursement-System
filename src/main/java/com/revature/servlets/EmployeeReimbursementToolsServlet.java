@@ -38,6 +38,8 @@ public class EmployeeReimbursementToolsServlet extends HttpServlet {
                             response);
                     request.getRequestDispatcher("employee-reimbursement-form.component.html").include(request,
                             response);
+                    out.println("<script>\n\tdocument.getElementById('reimbursement-tools').classList.toggle('active')\n</script>");
+                    out.println("<script>\n\tdocument.getElementById('reimbursement-link').classList.toggle('active')\n</script>");
                 } else {
                     throw new NoLoginException();
                 }
@@ -60,6 +62,8 @@ public class EmployeeReimbursementToolsServlet extends HttpServlet {
                     response);
             request.getRequestDispatcher("employee-reimbursement-form.component.html").include(request,
                     response);
+            out.println("<script>\n\tdocument.getElementById('reimbursement-tools').classList.toggle('active')\n</script>");
+            out.println("<script>\n\tdocument.getElementById('reimbursement-link').classList.toggle('active')\n</script>");
             String username = session.getAttribute("username").toString();
             String password = session.getAttribute("password").toString();
             User user = DatabaseHandler.getDbHandler().getUser(username, password);

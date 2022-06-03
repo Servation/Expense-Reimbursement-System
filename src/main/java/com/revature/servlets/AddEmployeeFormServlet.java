@@ -28,6 +28,8 @@ public class AddEmployeeFormServlet extends HttpServlet {
                     request.getRequestDispatcher("manager-home.html").include(request, response);
                     request.getRequestDispatcher("management-tools.component.html").include(request, response);
                     request.getRequestDispatcher("add-employee.component.html").include(request, response);
+                    out.println("<script>\n\tdocument.getElementById('management-tools').classList.toggle('active')\n</script>");
+                    out.println("<script>\n\tdocument.getElementById('add-employee-link').classList.toggle('active')\n</script>");
                 } else {
                     throw new NoLoginException();
                 }
@@ -53,6 +55,7 @@ public class AddEmployeeFormServlet extends HttpServlet {
                     request.getRequestDispatcher("manager-home.html").include(request, response);
                     request.getRequestDispatcher("management-tools.component.html").include(request, response);
                     request.getRequestDispatcher("add-employee.component.html").include(request, response);
+                    out.println("<script>\n\tdocument.getElementById('management-tools').classList.toggle('active')\n</script>");
                     String addUsername = request.getParameter("username");
                     List<String> users = DatabaseHandler.getDbHandler().listUser().stream().map(User::getUsername).collect(Collectors.toList());
                     if (!users.contains(addUsername)) {
