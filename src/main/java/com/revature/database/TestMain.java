@@ -1,15 +1,21 @@
 package com.revature.database;
 
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
+
 import java.io.File;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.LogManager;
 
 public class TestMain {
 
-
+    static Logger log = Logger.getLogger(TestMain.class.getName());
     public static void main(String[] args){
+
         DatabaseHandler dbHandler = DatabaseHandler.getDbHandler();
+
         User user = dbHandler.getUser("tl123", "admin");
         String filePath = "com/revature/images";
         String directory = System.getProperty("user.dir") + "/src/main/java/com/revature/images/";
@@ -22,6 +28,7 @@ public class TestMain {
         boolean run = true;
         Scanner scanner = new Scanner(System.in);
         int input;
+
         if(user != null){
             while(run){
                 System.out.println("0: Quit");
@@ -152,6 +159,11 @@ public class TestMain {
                 }
             }
         }
+
+        // Log4j test
+        BasicConfigurator.configure();
+        log.info("hello");
+        log.debug("testing");
     }
 
     public static int getNumber(){
