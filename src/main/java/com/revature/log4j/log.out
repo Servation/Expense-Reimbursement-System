@@ -1,0 +1,918 @@
+Creating database connection
+Logging Provider: org.jboss.logging.Log4jLoggerProvider
+Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+HHH000412: Hibernate ORM core version 5.6.1.Final
+HHH000206: hibernate.properties not found
+cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+Building session factory using internal StandardServiceRegistryBuilder
+Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+Building session factory using provided StandardServiceRegistry
+Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+Adding type registration boolean -> org.hibernate.type.BooleanType@6f58cbb2
+Adding type registration boolean -> org.hibernate.type.BooleanType@6f58cbb2
+Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@6f58cbb2
+Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@15f13d13
+Adding type registration true_false -> org.hibernate.type.TrueFalseType@d73e2bb
+Adding type registration yes_no -> org.hibernate.type.YesNoType@75bda5bf
+Adding type registration byte -> org.hibernate.type.ByteType@2037bd5a
+Adding type registration byte -> org.hibernate.type.ByteType@2037bd5a
+Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@2037bd5a
+Adding type registration character -> org.hibernate.type.CharacterType@11b481d4
+Adding type registration char -> org.hibernate.type.CharacterType@11b481d4
+Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@11b481d4
+Adding type registration short -> org.hibernate.type.ShortType@7c715e8
+Adding type registration short -> org.hibernate.type.ShortType@7c715e8
+Adding type registration java.lang.Short -> org.hibernate.type.ShortType@7c715e8
+Adding type registration integer -> org.hibernate.type.IntegerType@3ffd33cb
+Adding type registration int -> org.hibernate.type.IntegerType@3ffd33cb
+Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@3ffd33cb
+Adding type registration long -> org.hibernate.type.LongType@24bc6375
+Adding type registration long -> org.hibernate.type.LongType@24bc6375
+Adding type registration java.lang.Long -> org.hibernate.type.LongType@24bc6375
+Adding type registration float -> org.hibernate.type.FloatType@66814205
+Adding type registration float -> org.hibernate.type.FloatType@66814205
+Adding type registration java.lang.Float -> org.hibernate.type.FloatType@66814205
+Adding type registration double -> org.hibernate.type.DoubleType@4c9eaaae
+Adding type registration double -> org.hibernate.type.DoubleType@4c9eaaae
+Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@4c9eaaae
+Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@6c003f0b
+Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@6c003f0b
+Adding type registration big_integer -> org.hibernate.type.BigIntegerType@34a8ae7
+Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@34a8ae7
+Adding type registration string -> org.hibernate.type.StringType@66955a9e
+Adding type registration java.lang.String -> org.hibernate.type.StringType@66955a9e
+Adding type registration nstring -> org.hibernate.type.StringNVarcharType@14292192
+Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@5738b2a8
+Adding type registration url -> org.hibernate.type.UrlType@f34065
+Adding type registration java.net.URL -> org.hibernate.type.UrlType@f34065
+Adding type registration Duration -> org.hibernate.type.DurationType@12a4bd9b
+Adding type registration java.time.Duration -> org.hibernate.type.DurationType@12a4bd9b
+Adding type registration Instant -> org.hibernate.type.InstantType@2962895e
+Adding type registration java.time.Instant -> org.hibernate.type.InstantType@2962895e
+Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@6d1ab64f
+Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@6d1ab64f
+Adding type registration LocalDate -> org.hibernate.type.LocalDateType@96eec0b
+Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@96eec0b
+Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@70e19a0c
+Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@70e19a0c
+Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@6d144ded
+Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@6d144ded
+Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@1248fe82
+Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@1248fe82
+Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@56e62a45
+Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@56e62a45
+Adding type registration date -> org.hibernate.type.DateType@41d481c2
+Adding type registration java.sql.Date -> org.hibernate.type.DateType@41d481c2
+Adding type registration time -> org.hibernate.type.TimeType@770a665b
+Adding type registration java.sql.Time -> org.hibernate.type.TimeType@770a665b
+Adding type registration timestamp -> org.hibernate.type.TimestampType@726413ca
+Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@726413ca
+Adding type registration java.util.Date -> org.hibernate.type.TimestampType@726413ca
+Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@6e66db44
+Adding type registration calendar -> org.hibernate.type.CalendarType@34327d4e
+Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@34327d4e
+Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@34327d4e
+Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@3cc3e188
+Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@43331ba7
+Adding type registration locale -> org.hibernate.type.LocaleType@318640f
+Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@318640f
+Adding type registration currency -> org.hibernate.type.CurrencyType@4954f206
+Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@4954f206
+Adding type registration timezone -> org.hibernate.type.TimeZoneType@3b309d80
+Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@3b309d80
+Adding type registration class -> org.hibernate.type.ClassType@18984030
+Adding type registration java.lang.Class -> org.hibernate.type.ClassType@18984030
+Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@3b18ab43
+Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@3b18ab43
+Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@76a4682
+Adding type registration binary -> org.hibernate.type.BinaryType@3cca16dd
+Adding type registration byte[] -> org.hibernate.type.BinaryType@3cca16dd
+Adding type registration [B -> org.hibernate.type.BinaryType@3cca16dd
+Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@3965bfb1
+Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@3965bfb1
+Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@3965bfb1
+Adding type registration row_version -> org.hibernate.type.RowVersionType@5788ab41
+Adding type registration image -> org.hibernate.type.ImageType@29bf8b4a
+Adding type registration characters -> org.hibernate.type.CharArrayType@15365c44
+Adding type registration char[] -> org.hibernate.type.CharArrayType@15365c44
+Adding type registration [C -> org.hibernate.type.CharArrayType@15365c44
+Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@22a25a66
+Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@22a25a66
+Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@22a25a66
+Adding type registration text -> org.hibernate.type.TextType@66dfd0d5
+Adding type registration ntext -> org.hibernate.type.NTextType@6706500b
+Adding type registration blob -> org.hibernate.type.BlobType@162b7581
+Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@162b7581
+Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@112cf1a6
+Adding type registration clob -> org.hibernate.type.ClobType@5c70e06f
+Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@5c70e06f
+Adding type registration nclob -> org.hibernate.type.NClobType@6ba5c970
+Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@6ba5c970
+Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@32941db
+Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@5605deb0
+Adding type registration serializable -> org.hibernate.type.SerializableType@28e029b8
+Adding type registration object -> org.hibernate.type.ObjectType@5111c5e0
+Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@5111c5e0
+Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@28bb5824
+Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@4a9f4db2
+Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@1fbc36
+Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@220864b2
+Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@508062af
+Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@604257d0
+Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@1dc1b9e2
+Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@7c8d731c
+Interpreting public/system identifier : [-//Hibernate/Hibernate Mapping DTD//EN] - [http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd]
+Recognized hibernate-mapping identifier; attempting to resolve on classpath under org/hibernate/
+Performing JAXB binding of hbm.xml document : Origin(name=User.hbm.xml,type=RESOURCE)
+Interpreting public/system identifier : [-//Hibernate/Hibernate Mapping DTD//EN] - [http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd]
+Recognized hibernate-mapping identifier; attempting to resolve on classpath under org/hibernate/
+Performing JAXB binding of hbm.xml document : Origin(name=Reimbursement.hbm.xml,type=RESOURCE)
+Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/ers]
+HHH10001001: Connection properties: {password=@KonoKo01203735, user=root}
+HHH10001003: Autocommit mode: false
+Initializing Connection pool with 1 Connections
+HHH000115: Hibernate connection pool size: 20 (min=1)
+Database ->
+       name : MySQL
+    version : 8.0.28
+      major : 8
+      minor : 0
+Driver ->
+       name : MySQL Connector/J
+    version : mysql-connector-java-8.0.29 (Revision: dd61577595edad45c398af508cf91ad26fc4144f)
+      major : 8
+      minor : 0
+JDBC version : 4.2
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+JDBC driver metadata reported database stores quoted identifiers in more than one case
+IdentifierCaseStrategy for both quoted and unquoted identifiers was set to the same strategy [LOWER]; that will likely lead to problems in schema update and validation if using quoted identifiers
+Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@5299b378] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@170a8292]
+Mapping class: com.revature.database.User -> USER
+Mapped property: user_id -> [User_ID]
+Forcing column [user_id] to be non-null as it is part of the primary key for table [user]
+Mapped property: first_Name -> [First_Name]
+Mapped property: last_Name -> [Last_Name]
+Mapped property: email -> [Email]
+Mapped property: type -> [Type]
+Mapped property: username -> [Username]
+Mapped property: password -> [Password]
+Mapping class: com.revature.database.Reimbursement -> REIMBURSEMENT
+Mapped property: reimbursement_ID -> [Reimbursement_ID]
+Forcing column [reimbursement_id] to be non-null as it is part of the primary key for table [reimbursement]
+Mapped property: user_ID -> [User_ID]
+Mapped property: title -> [Title]
+Mapped property: amount -> [Amount]
+Mapped property: detail -> [Detail]
+Mapped property: date -> [Date]
+Mapped property: status -> [Status]
+Mapped property: image -> [Image]
+Building session factory
+SessionFactory name : null
+Automatic flush during beforeCompletion(): enabled
+Automatic session close at end of transaction: disabled
+Statistics: disabled
+Deleted entity synthetic identifier rollback: disabled
+Default entity-mode: pojo
+Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+Allow initialization of lazy state outside session : disabled
+Using BatchFetchStyle : LEGACY
+Default batch fetch size: -1
+Maximum outer join fetch depth: 2
+Default null ordering: NONE
+Order SQL updates by primary key: disabled
+Order SQL inserts for batching: disabled
+multi-tenancy strategy : NONE
+JTA Track by Thread: enabled
+Query language substitutions: {}
+Named query checking : enabled
+Second-level cache: disabled
+Second-level query cache: disabled
+Second-level query cache factory: null
+Second-level cache region prefix: null
+Optimize second-level cache for minimal puts: disabled
+Structured second-level cache entries: disabled
+Second-level cache direct-reference entries: disabled
+Automatic eviction of collection cache: disabled
+JDBC batch size: 15
+JDBC batch updates for versioned data: enabled
+Scrollable result sets: enabled
+Wrap result sets: disabled
+JDBC3 getGeneratedKeys(): enabled
+JDBC result set fetch size: null
+Connection release mode: AFTER_TRANSACTION
+Generate SQL with comments: disabled
+JPA compliance - query : disabled
+JPA compliance - closed-handling : disabled
+JPA compliance - lists : disabled
+JPA compliance - transactions : disabled
+Not known whether passed class name [com.revature.database.Reimbursement] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.revature.database.Reimbursement
+Not known whether passed class name [com.revature.database.User] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.revature.database.User
+EventListenerRegistry access via ServiceRegistry is deprecated.  Use `sessionFactory.getEventEngine().getListenerRegistry()` instead
+EventListenerRegistry access via ServiceRegistry is deprecated.  Use `sessionFactory.getEventEngine().getListenerRegistry()` instead
+Session factory constructed with filter configurations : {}
+Instantiating session factory with properties: {dialect=org.hibernate.dialect.MySQL5Dialect, java.specification.version=17, sun.cpu.isalist=amd64, sun.jnu.encoding=Cp1252, hibernate.dialect=org.hibernate.dialect.MySQL5Dialect, java.class.path=D:\Tomcat\apache-tomcat-9.0.63\bin\bootstrap.jar;D:\Tomcat\apache-tomcat-9.0.63\bin\commons-daemon.jar;D:\Tomcat\apache-tomcat-9.0.63\bin\tomcat-juli.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\annotations-api.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\catalina-ant.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\catalina-ha.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\catalina-ssi.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\catalina-storeconfig.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\catalina-tribes.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\catalina.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\ecj-4.20.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\el-api.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\jasper-el.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\jasper.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\jaspic-api.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\jsp-api.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\servlet-api.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-api.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-coyote.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-dbcp.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-i18n-cs.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-i18n-de.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-i18n-es.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-i18n-fr.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-i18n-ja.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-i18n-ko.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-i18n-pt-BR.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-i18n-ru.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-i18n-zh-CN.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-jdbc.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-jni.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-util-scan.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-util.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-websocket.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\websocket-api.jar, java.vm.vendor=Amazon.com Inc., sun.arch.data.model=64, hbm2ddl.auto=update, user.variant=, java.vendor.url=https://aws.amazon.com/corretto/, catalina.useNaming=true, user.timezone=America/New_York, java.vm.specification.version=17, os.name=Windows 10, sun.java.launcher=SUN_STANDARD, user.country=US, sun.boot.library.path=C:\Users\Ikikaesu\.jdks\corretto-17.0.3\bin, sun.java.command=org.apache.catalina.startup.Bootstrap start, jdk.debug=release, sun.cpu.endian=little, user.home=C:\Users\Ikikaesu, user.language=en, java.specification.vendor=Oracle Corporation, java.naming.factory.url.pkgs=org.apache.naming, java.version.date=2022-04-19, java.home=C:\Users\Ikikaesu\.jdks\corretto-17.0.3, file.separator=\, java.vm.compressedOopsMode=Zero based, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, java.specification.name=Java Platform API Specification, package.access=sun.,org.apache.catalina.,org.apache.coyote.,org.apache.jasper.,org.apache.tomcat., package.definition=sun.,java.,org.apache.catalina.,org.apache.coyote.,org.apache.jasper.,org.apache.naming.,org.apache.tomcat., hibernate.hbm2ddl.auto=update, user.script=, server.loader=, java.util.logging.config.file=C:\Users\Ikikaesu\.SmartTomcat\project-1-revature\project-1-revature\conf\logging.properties, connection.password=@KonoKo01203735, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, java.runtime.version=17.0.3+6-LTS, java.naming.factory.initial=org.apache.naming.java.javaURLContextFactory, user.name=Ikikaesu, path.separator=;, common.loader="C:\Users\Ikikaesu\.SmartTomcat\project-1-revature\project-1-revature/lib","C:\Users\Ikikaesu\.SmartTomcat\project-1-revature\project-1-revature/lib/*.jar","C:\Users\Ikikaesu\.SmartTomcat\project-1-revature\project-1-revature/lib","C:\Users\Ikikaesu\.SmartTomcat\project-1-revature\project-1-revature/lib/*.jar", hibernate.connection.username=****, os.version=10.0, java.runtime.name=OpenJDK Runtime Environment, hibernate.connection.url=jdbc:mysql://localhost:3306/ers, file.encoding=UTF-8, java.vm.name=OpenJDK 64-Bit Server VM, hibernate.show_sql=true, java.vendor.version=Corretto-17.0.3.6.1, show_sql=true, hibernate.connection.driver_class=com.mysql.cj.jdbc.Driver, java.vendor.url.bug=https://github.com/corretto/corretto-17/issues/, java.io.tmpdir=C:\Users\Ikikaesu\AppData\Local\Temp\, tomcat.util.scan.StandardJarScanFilter.jarsToScan=log4j-taglib*.jar,log4j-web*.jar,log4javascript*.jar,slf4j-taglib*.jar, catalina.home=C:\Users\Ikikaesu\.SmartTomcat\project-1-revature\project-1-revature, java.version=17.0.3, tomcat.util.scan.StandardJarScanFilter.jarsToSkip=annotations-api.jar,ant-junit*.jar,ant-launcher.jar,ant.jar,asm-*.jar,aspectj*.jar,bootstrap.jar,catalina-ant.jar,catalina-ha.jar,catalina-ssi.jar,catalina-storeconfig.jar,catalina-tribes.jar,catalina.jar,cglib-*.jar,cobertura-*.jar,commons-beanutils*.jar,commons-codec*.jar,commons-collections*.jar,commons-daemon.jar,commons-dbcp*.jar,commons-digester*.jar,commons-fileupload*.jar,commons-httpclient*.jar,commons-io*.jar,commons-lang*.jar,commons-logging*.jar,commons-math*.jar,commons-pool*.jar,derby-*.jar,dom4j-*.jar,easymock-*.jar,ecj-*.jar,el-api.jar,geronimo-spec-jaxrpc*.jar,h2*.jar,ha-api-*.jar,hamcrest-*.jar,hibernate*.jar,httpclient*.jar,icu4j-*.jar,jasper-el.jar,jasper.jar,jaspic-api.jar,jaxb-*.jar,jaxen-*.jar,jaxws-rt-*.jar,jdom-*.jar,jetty-*.jar,jmx-tools.jar,jmx.jar,jsp-api.jar,jstl.jar,jta*.jar,junit-*.jar,junit.jar,log4j*.jar,mail*.jar,objenesis-*.jar,oraclepki.jar,oro-*.jar,servlet-api-*.jar,servlet-api.jar,slf4j*.jar,taglibs-standard-spec-*.jar,tagsoup-*.jar,tomcat-api.jar,tomcat-coyote.jar,tomcat-dbcp.jar,tomcat-i18n-*.jar,tomcat-jdbc.jar,tomcat-jni.jar,tomcat-juli-adapters.jar,tomcat-juli.jar,tomcat-util-scan.jar,tomcat-util.jar,tomcat-websocket.jar,tools.jar,websocket-api.jar,wsdl4j*.jar,xercesImpl.jar,xml-apis.jar,xmlParserAPIs-*.jar,xmlParserAPIs.jar,xom-*.jar, user.dir=C:\Users\Ikikaesu\.SmartTomcat\project-1-revature\project-1-revature, os.arch=amd64, connection.username=root, java.vm.specification.name=Java Virtual Machine Specification, hibernate.connection.password=****, sun.os.patch.level=, connection.driver_class=com.mysql.cj.jdbc.Driver, catalina.base=C:\Users\Ikikaesu\.SmartTomcat\project-1-revature\project-1-revature, shared.loader=, hibernate.boot.CfgXmlAccessService.key=org.hibernate.boot.cfgxml.spi.LoadedConfig@7f5b9c53, native.encoding=Cp1252, java.util.logging.manager=org.apache.juli.ClassLoaderLogManager, java.library.path=C:\Users\Ikikaesu\.jdks\corretto-17.0.3\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Ikikasu\AppData\Local\Microsoft\WindowsApps;C:\Users\Ikikasu\AppData\Local\atom\bin;C:\Users\Ikikaesu\AppData\Local\atom\bin;C:\Users\Ikikaesu\AppData\Local\GitHubDesktop\bin;C:\Users\Ikikaesu\.dotnet\tools;C:\Users\Ikikaesu\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Ikikaesu\AppData\Roaming\npm;., java.vendor=Amazon.com Inc., java.vm.info=mixed mode, sharing, java.vm.version=17.0.3+6-LTS, hibernate.bytecode.use_reflection_optimizer=false, sun.io.unicode.encoding=UnicodeLittle, tomcat.util.buf.StringCache.byte.enabled=true, connection.url=jdbc:mysql://localhost:3306/ers, java.class.version=61.0}
+Skipping JACC integration as it was not enabled
+Instantiated session factory
+Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@5299b378] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@4b8a2424]
+Not known whether passed class name [com.revature.database.Reimbursement] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.revature.database.Reimbursement
+Not known whether passed class name [com.revature.database.User] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.revature.database.User
+Static SQL for entity: com.revature.database.Reimbursement
+ Version select: select Reimbursement_ID from REIMBURSEMENT where Reimbursement_ID =?
+ Snapshot select: select reimbursem_.Reimbursement_ID, reimbursem_.User_ID as user_id2_0_, reimbursem_.Title as title3_0_, reimbursem_.Amount as amount4_0_, reimbursem_.Detail as detail5_0_, reimbursem_.Date as date6_0_, reimbursem_.Status as status7_0_, reimbursem_.Image as image8_0_ from REIMBURSEMENT reimbursem_ where reimbursem_.Reimbursement_ID=?
+ Insert 0: insert into REIMBURSEMENT (User_ID, Title, Amount, Detail, Date, Status, Image, Reimbursement_ID) values (?, ?, ?, ?, ?, ?, ?, ?)
+ Update 0: update REIMBURSEMENT set User_ID=?, Title=?, Amount=?, Detail=?, Date=?, Status=?, Image=? where Reimbursement_ID=?
+ Delete 0: delete from REIMBURSEMENT where Reimbursement_ID=?
+ Identity insert: insert into REIMBURSEMENT (User_ID, Title, Amount, Detail, Date, Status, Image) values (?, ?, ?, ?, ?, ?, ?)
+Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4356d867]
+Visiting attribute path : user_ID
+Visiting attribute path : title
+Visiting attribute path : amount
+Visiting attribute path : detail
+Visiting attribute path : date
+Visiting attribute path : status
+Visiting attribute path : image
+Building LoadPlan...
+processing queryspace <gen:0>
+LoadPlan(entity=com.revature.database.Reimbursement)
+    - Returns
+       - EntityReturnImpl(entity=com.revature.database.Reimbursement, querySpaceUid=<gen:0>, path=com.revature.database.Reimbursement)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.revature.database.Reimbursement)
+          - SQL table alias mapping - reimbursem0_
+          - alias suffix - 0_
+          - suffixed key columns - {reimburs1_0_0_}
+
+Static select for entity com.revature.database.Reimbursement [NONE]: select reimbursem0_.Reimbursement_ID as reimburs1_0_0_, reimbursem0_.User_ID as user_id2_0_0_, reimbursem0_.Title as title3_0_0_, reimbursem0_.Amount as amount4_0_0_, reimbursem0_.Detail as detail5_0_0_, reimbursem0_.Date as date6_0_0_, reimbursem0_.Status as status7_0_0_, reimbursem0_.Image as image8_0_0_ from REIMBURSEMENT reimbursem0_ where reimbursem0_.Reimbursement_ID=?
+Static SQL for entity: com.revature.database.User
+ Version select: select User_ID from USER where User_ID =?
+ Snapshot select: select user_.User_ID, user_.First_Name as first_na2_1_, user_.Last_Name as last_nam3_1_, user_.Email as email4_1_, user_.Type as type5_1_, user_.Username as username6_1_, user_.Password as password7_1_ from USER user_ where user_.User_ID=?
+ Insert 0: insert into USER (First_Name, Last_Name, Email, Type, Username, Password, User_ID) values (?, ?, ?, ?, ?, ?, ?)
+ Update 0: update USER set First_Name=?, Last_Name=?, Email=?, Type=?, Username=?, Password=? where User_ID=?
+ Delete 0: delete from USER where User_ID=?
+ Identity insert: insert into USER (First_Name, Last_Name, Email, Type, Username, Password) values (?, ?, ?, ?, ?, ?)
+Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@c65e95]
+Visiting attribute path : first_Name
+Visiting attribute path : last_Name
+Visiting attribute path : email
+Visiting attribute path : type
+Visiting attribute path : username
+Visiting attribute path : password
+Building LoadPlan...
+processing queryspace <gen:0>
+LoadPlan(entity=com.revature.database.User)
+    - Returns
+       - EntityReturnImpl(entity=com.revature.database.User, querySpaceUid=<gen:0>, path=com.revature.database.User)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.revature.database.User)
+          - SQL table alias mapping - user0_
+          - alias suffix - 0_
+          - suffixed key columns - {user_id1_1_0_}
+
+Static select for entity com.revature.database.User [NONE]: select user0_.User_ID as user_id1_1_0_, user0_.First_Name as first_na2_1_0_, user0_.Last_Name as last_nam3_1_0_, user0_.Email as email4_1_0_, user0_.Type as type5_1_0_, user0_.Username as username6_1_0_, user0_.Password as password7_1_0_ from USER user0_ where user0_.User_ID=?
+HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5a31074e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+No alter strings for table : REIMBURSEMENT
+No alter strings for table : USER
+No JtaPlatform was specified, checking resolver
+No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Checking 0 named HQL queries
+Checking 0 named SQL queries
+EventListenerRegistry access via ServiceRegistry is deprecated.  Use `sessionFactory.getEventEngine().getListenerRegistry()` instead
+Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@21d1d6e2
+Registering SessionFactory: 30c663a6-605e-4fad-8bbf-86439c5f9267 (<unnamed>)
+Not binding SessionFactory to JNDI, no JNDI name configured
+Getting user information for user: tl123 password: admin
+Getting list of users!
+Statistics initialized [enabled=false]
+On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+begin
+QueryTranslatorFactory: org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory@77a8f08
+parse() - HQL: FROM com.revature.database.User
+throwQueryException() : no errors
+--- HQL AST ---
+ \-[QUERY] Node: 'query'
+    \-[SELECT_FROM] Node: 'SELECT_FROM'
+       \-[FROM] Node: 'FROM'
+          \-[RANGE] Node: 'RANGE'
+             \-[DOT] Node: '.'
+                +-[DOT] Node: '.'
+                |  +-[DOT] Node: '.'
+                |  |  +-[IDENT] Node: 'com'
+                |  |  \-[IDENT] Node: 'revature'
+                |  \-[IDENT] Node: 'database'
+                \-[IDENT] Node: 'User'
+
+select << begin [level=1, statement=select]
+FromClause{level=1} : com.revature.database.User (<no alias>) -> user0_
+select : finishing up [level=1, statement=select]
+processQuery() :  ( SELECT ( FromClause{level=1} USER user0_ ) )
+Derived SELECT clause created.
+Tables referenced from query nodes:
+ \-QueryNode
+    +-SelectClause
+    | referencedTables(entity User): [USER]
+    |  +-SelectExpressionImpl
+    |  | persister: SingleTableEntityPersister(com.revature.database.User)
+    |  \-SqlFragment
+    \-FromClause
+       \-FromElement
+
+Using FROM fragment [USER user0_]
+select >> end [level=1, statement=select]
+--- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (USER)
+    +-[SELECT_CLAUSE] SelectClause: '{derived select clause}'
+    |  +-[SELECT_EXPR] SelectExpressionImpl: 'user0_.User_ID as user_id1_1_' {FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=null,role=null,tableName=USER,tableAlias=user0_,origin=null,columns={,className=com.revature.database.User}}}
+    |  \-[SQL_TOKEN] SqlFragment: 'user0_.First_Name as first_na2_1_, user0_.Last_Name as last_nam3_1_, user0_.Email as email4_1_, user0_.Type as type5_1_, user0_.Username as username6_1_, user0_.Password as password7_1_'
+    \-[FROM] FromClause: 'FROM' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[], fromElementByTableAlias=[user0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+       \-[FROM_FRAGMENT] FromElement: 'USER user0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=null,role=null,tableName=USER,tableAlias=user0_,origin=null,columns={,className=com.revature.database.User}}
+
+throwQueryException() : no errors
+HQL: FROM com.revature.database.User
+SQL: select user0_.User_ID as user_id1_1_, user0_.First_Name as first_na2_1_, user0_.Last_Name as last_nam3_1_, user0_.Email as email4_1_, user0_.Type as type5_1_, user0_.Username as username6_1_, user0_.Password as password7_1_ from USER user0_
+throwQueryException() : no errors
+select user0_.User_ID as user_id1_1_, user0_.First_Name as first_na2_1_, user0_.Last_Name as last_nam3_1_, user0_.Email as email4_1_, user0_.Type as type5_1_, user0_.Username as username6_1_, user0_.Password as password7_1_ from USER user0_
+Result set row: 0
+Result row: EntityKey[com.revature.database.User#1001]
+Result set row: 1
+Result row: EntityKey[com.revature.database.User#1002]
+Result set row: 2
+Result row: EntityKey[com.revature.database.User#1003]
+Result set row: 3
+Result row: EntityKey[com.revature.database.User#1004]
+Result set row: 4
+Result row: EntityKey[com.revature.database.User#1005]
+Result set row: 5
+Result row: EntityKey[com.revature.database.User#1008]
+Resolving attributes for [com.revature.database.User#1001]
+Processing attribute `first_Name` : value = Jeffery
+Attribute (`first_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `last_Name` : value = Saelee
+Attribute (`last_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `email` : value = js@gmail.com
+Attribute (`email`)  - enhanced for lazy-loading? - false
+Processing attribute `type` : value = Manager
+Attribute (`type`)  - enhanced for lazy-loading? - false
+Processing attribute `username` : value = js123
+Attribute (`username`)  - enhanced for lazy-loading? - false
+Processing attribute `password` : value = admin
+Attribute (`password`)  - enhanced for lazy-loading? - false
+Done materializing entity [com.revature.database.User#1001]
+Resolving attributes for [com.revature.database.User#1002]
+Processing attribute `first_Name` : value = Thomas
+Attribute (`first_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `last_Name` : value = Lin
+Attribute (`last_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `email` : value = tl@gmail.com
+Attribute (`email`)  - enhanced for lazy-loading? - false
+Processing attribute `type` : value = Manager
+Attribute (`type`)  - enhanced for lazy-loading? - false
+Processing attribute `username` : value = tl123
+Attribute (`username`)  - enhanced for lazy-loading? - false
+Processing attribute `password` : value = admin
+Attribute (`password`)  - enhanced for lazy-loading? - false
+Done materializing entity [com.revature.database.User#1002]
+Resolving attributes for [com.revature.database.User#1003]
+Processing attribute `first_Name` : value = test1
+Attribute (`first_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `last_Name` : value = employee
+Attribute (`last_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `email` : value = test@gmail.com
+Attribute (`email`)  - enhanced for lazy-loading? - false
+Processing attribute `type` : value = Employee
+Attribute (`type`)  - enhanced for lazy-loading? - false
+Processing attribute `username` : value = test1
+Attribute (`username`)  - enhanced for lazy-loading? - false
+Processing attribute `password` : value = 123
+Attribute (`password`)  - enhanced for lazy-loading? - false
+Done materializing entity [com.revature.database.User#1003]
+Resolving attributes for [com.revature.database.User#1004]
+Processing attribute `first_Name` : value = test2
+Attribute (`first_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `last_Name` : value = user
+Attribute (`last_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `email` : value = testu@gmail.com
+Attribute (`email`)  - enhanced for lazy-loading? - false
+Processing attribute `type` : value = Employee
+Attribute (`type`)  - enhanced for lazy-loading? - false
+Processing attribute `username` : value = test2
+Attribute (`username`)  - enhanced for lazy-loading? - false
+Processing attribute `password` : value = 123
+Attribute (`password`)  - enhanced for lazy-loading? - false
+Done materializing entity [com.revature.database.User#1004]
+Resolving attributes for [com.revature.database.User#1005]
+Processing attribute `first_Name` : value = t
+Attribute (`first_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `last_Name` : value = l
+Attribute (`last_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `email` : value = thomaslin030735@gmail.com
+Attribute (`email`)  - enhanced for lazy-loading? - false
+Processing attribute `type` : value = Manager
+Attribute (`type`)  - enhanced for lazy-loading? - false
+Processing attribute `username` : value = admin
+Attribute (`username`)  - enhanced for lazy-loading? - false
+Processing attribute `password` : value = 123
+Attribute (`password`)  - enhanced for lazy-loading? - false
+Done materializing entity [com.revature.database.User#1005]
+Resolving attributes for [com.revature.database.User#1008]
+Processing attribute `first_Name` : value = Alternate
+Attribute (`first_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `last_Name` : value = Account
+Attribute (`last_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `email` : value = thomaslin030735@gmail.com
+Attribute (`email`)  - enhanced for lazy-loading? - false
+Processing attribute `type` : value = Manager
+Attribute (`type`)  - enhanced for lazy-loading? - false
+Processing attribute `username` : value = 123serter
+Attribute (`username`)  - enhanced for lazy-loading? - false
+Processing attribute `password` : value = admin
+Attribute (`password`)  - enhanced for lazy-loading? - false
+Done materializing entity [com.revature.database.User#1008]
+User list found!
+User found
+Connection pool now considered primed; min-size will be maintained
+Creating database connection
+Logging Provider: org.jboss.logging.Log4jLoggerProvider
+Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+HHH000412: Hibernate ORM core version 5.6.1.Final
+HHH000206: hibernate.properties not found
+cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+Building session factory using internal StandardServiceRegistryBuilder
+Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+Building session factory using provided StandardServiceRegistry
+Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+Adding type registration boolean -> org.hibernate.type.BooleanType@6f58cbb2
+Adding type registration boolean -> org.hibernate.type.BooleanType@6f58cbb2
+Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@6f58cbb2
+Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@15f13d13
+Adding type registration true_false -> org.hibernate.type.TrueFalseType@d73e2bb
+Adding type registration yes_no -> org.hibernate.type.YesNoType@75bda5bf
+Adding type registration byte -> org.hibernate.type.ByteType@2037bd5a
+Adding type registration byte -> org.hibernate.type.ByteType@2037bd5a
+Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@2037bd5a
+Adding type registration character -> org.hibernate.type.CharacterType@11b481d4
+Adding type registration char -> org.hibernate.type.CharacterType@11b481d4
+Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@11b481d4
+Adding type registration short -> org.hibernate.type.ShortType@7c715e8
+Adding type registration short -> org.hibernate.type.ShortType@7c715e8
+Adding type registration java.lang.Short -> org.hibernate.type.ShortType@7c715e8
+Adding type registration integer -> org.hibernate.type.IntegerType@3ffd33cb
+Adding type registration int -> org.hibernate.type.IntegerType@3ffd33cb
+Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@3ffd33cb
+Adding type registration long -> org.hibernate.type.LongType@24bc6375
+Adding type registration long -> org.hibernate.type.LongType@24bc6375
+Adding type registration java.lang.Long -> org.hibernate.type.LongType@24bc6375
+Adding type registration float -> org.hibernate.type.FloatType@66814205
+Adding type registration float -> org.hibernate.type.FloatType@66814205
+Adding type registration java.lang.Float -> org.hibernate.type.FloatType@66814205
+Adding type registration double -> org.hibernate.type.DoubleType@4c9eaaae
+Adding type registration double -> org.hibernate.type.DoubleType@4c9eaaae
+Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@4c9eaaae
+Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@6c003f0b
+Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@6c003f0b
+Adding type registration big_integer -> org.hibernate.type.BigIntegerType@34a8ae7
+Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@34a8ae7
+Adding type registration string -> org.hibernate.type.StringType@66955a9e
+Adding type registration java.lang.String -> org.hibernate.type.StringType@66955a9e
+Adding type registration nstring -> org.hibernate.type.StringNVarcharType@14292192
+Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@5738b2a8
+Adding type registration url -> org.hibernate.type.UrlType@f34065
+Adding type registration java.net.URL -> org.hibernate.type.UrlType@f34065
+Adding type registration Duration -> org.hibernate.type.DurationType@12a4bd9b
+Adding type registration java.time.Duration -> org.hibernate.type.DurationType@12a4bd9b
+Adding type registration Instant -> org.hibernate.type.InstantType@2962895e
+Adding type registration java.time.Instant -> org.hibernate.type.InstantType@2962895e
+Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@6d1ab64f
+Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@6d1ab64f
+Adding type registration LocalDate -> org.hibernate.type.LocalDateType@96eec0b
+Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@96eec0b
+Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@70e19a0c
+Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@70e19a0c
+Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@6d144ded
+Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@6d144ded
+Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@1248fe82
+Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@1248fe82
+Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@56e62a45
+Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@56e62a45
+Adding type registration date -> org.hibernate.type.DateType@41d481c2
+Adding type registration java.sql.Date -> org.hibernate.type.DateType@41d481c2
+Adding type registration time -> org.hibernate.type.TimeType@770a665b
+Adding type registration java.sql.Time -> org.hibernate.type.TimeType@770a665b
+Adding type registration timestamp -> org.hibernate.type.TimestampType@726413ca
+Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@726413ca
+Adding type registration java.util.Date -> org.hibernate.type.TimestampType@726413ca
+Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@6e66db44
+Adding type registration calendar -> org.hibernate.type.CalendarType@34327d4e
+Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@34327d4e
+Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@34327d4e
+Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@3cc3e188
+Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@43331ba7
+Adding type registration locale -> org.hibernate.type.LocaleType@318640f
+Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@318640f
+Adding type registration currency -> org.hibernate.type.CurrencyType@4954f206
+Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@4954f206
+Adding type registration timezone -> org.hibernate.type.TimeZoneType@3b309d80
+Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@3b309d80
+Adding type registration class -> org.hibernate.type.ClassType@18984030
+Adding type registration java.lang.Class -> org.hibernate.type.ClassType@18984030
+Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@3b18ab43
+Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@3b18ab43
+Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@76a4682
+Adding type registration binary -> org.hibernate.type.BinaryType@3cca16dd
+Adding type registration byte[] -> org.hibernate.type.BinaryType@3cca16dd
+Adding type registration [B -> org.hibernate.type.BinaryType@3cca16dd
+Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@3965bfb1
+Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@3965bfb1
+Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@3965bfb1
+Adding type registration row_version -> org.hibernate.type.RowVersionType@5788ab41
+Adding type registration image -> org.hibernate.type.ImageType@29bf8b4a
+Adding type registration characters -> org.hibernate.type.CharArrayType@15365c44
+Adding type registration char[] -> org.hibernate.type.CharArrayType@15365c44
+Adding type registration [C -> org.hibernate.type.CharArrayType@15365c44
+Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@22a25a66
+Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@22a25a66
+Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@22a25a66
+Adding type registration text -> org.hibernate.type.TextType@66dfd0d5
+Adding type registration ntext -> org.hibernate.type.NTextType@6706500b
+Adding type registration blob -> org.hibernate.type.BlobType@162b7581
+Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@162b7581
+Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@112cf1a6
+Adding type registration clob -> org.hibernate.type.ClobType@5c70e06f
+Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@5c70e06f
+Adding type registration nclob -> org.hibernate.type.NClobType@6ba5c970
+Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@6ba5c970
+Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@32941db
+Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@5605deb0
+Adding type registration serializable -> org.hibernate.type.SerializableType@28e029b8
+Adding type registration object -> org.hibernate.type.ObjectType@5111c5e0
+Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@5111c5e0
+Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@28bb5824
+Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@4a9f4db2
+Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@1fbc36
+Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@220864b2
+Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@508062af
+Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@604257d0
+Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@1dc1b9e2
+Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@7c8d731c
+Interpreting public/system identifier : [-//Hibernate/Hibernate Mapping DTD//EN] - [http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd]
+Recognized hibernate-mapping identifier; attempting to resolve on classpath under org/hibernate/
+Performing JAXB binding of hbm.xml document : Origin(name=User.hbm.xml,type=RESOURCE)
+Interpreting public/system identifier : [-//Hibernate/Hibernate Mapping DTD//EN] - [http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd]
+Recognized hibernate-mapping identifier; attempting to resolve on classpath under org/hibernate/
+Performing JAXB binding of hbm.xml document : Origin(name=Reimbursement.hbm.xml,type=RESOURCE)
+Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/ers]
+HHH10001001: Connection properties: {password=@KonoKo01203735, user=root}
+HHH10001003: Autocommit mode: false
+Initializing Connection pool with 1 Connections
+HHH000115: Hibernate connection pool size: 20 (min=1)
+Database ->
+       name : MySQL
+    version : 8.0.28
+      major : 8
+      minor : 0
+Driver ->
+       name : MySQL Connector/J
+    version : mysql-connector-java-8.0.29 (Revision: dd61577595edad45c398af508cf91ad26fc4144f)
+      major : 8
+      minor : 0
+JDBC version : 4.2
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+JDBC driver metadata reported database stores quoted identifiers in more than one case
+IdentifierCaseStrategy for both quoted and unquoted identifiers was set to the same strategy [LOWER]; that will likely lead to problems in schema update and validation if using quoted identifiers
+Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@5299b378] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@170a8292]
+Mapping class: com.revature.database.User -> USER
+Mapped property: user_id -> [User_ID]
+Forcing column [user_id] to be non-null as it is part of the primary key for table [user]
+Mapped property: first_Name -> [First_Name]
+Mapped property: last_Name -> [Last_Name]
+Mapped property: email -> [Email]
+Mapped property: type -> [Type]
+Mapped property: username -> [Username]
+Mapped property: password -> [Password]
+Mapping class: com.revature.database.Reimbursement -> REIMBURSEMENT
+Mapped property: reimbursement_ID -> [Reimbursement_ID]
+Forcing column [reimbursement_id] to be non-null as it is part of the primary key for table [reimbursement]
+Mapped property: user_ID -> [User_ID]
+Mapped property: title -> [Title]
+Mapped property: amount -> [Amount]
+Mapped property: detail -> [Detail]
+Mapped property: date -> [Date]
+Mapped property: status -> [Status]
+Mapped property: image -> [Image]
+Building session factory
+SessionFactory name : null
+Automatic flush during beforeCompletion(): enabled
+Automatic session close at end of transaction: disabled
+Statistics: disabled
+Deleted entity synthetic identifier rollback: disabled
+Default entity-mode: pojo
+Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+Allow initialization of lazy state outside session : disabled
+Using BatchFetchStyle : LEGACY
+Default batch fetch size: -1
+Maximum outer join fetch depth: 2
+Default null ordering: NONE
+Order SQL updates by primary key: disabled
+Order SQL inserts for batching: disabled
+multi-tenancy strategy : NONE
+JTA Track by Thread: enabled
+Query language substitutions: {}
+Named query checking : enabled
+Second-level cache: disabled
+Second-level query cache: disabled
+Second-level query cache factory: null
+Second-level cache region prefix: null
+Optimize second-level cache for minimal puts: disabled
+Structured second-level cache entries: disabled
+Second-level cache direct-reference entries: disabled
+Automatic eviction of collection cache: disabled
+JDBC batch size: 15
+JDBC batch updates for versioned data: enabled
+Scrollable result sets: enabled
+Wrap result sets: disabled
+JDBC3 getGeneratedKeys(): enabled
+JDBC result set fetch size: null
+Connection release mode: AFTER_TRANSACTION
+Generate SQL with comments: disabled
+JPA compliance - query : disabled
+JPA compliance - closed-handling : disabled
+JPA compliance - lists : disabled
+JPA compliance - transactions : disabled
+Not known whether passed class name [com.revature.database.Reimbursement] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.revature.database.Reimbursement
+Not known whether passed class name [com.revature.database.User] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.revature.database.User
+EventListenerRegistry access via ServiceRegistry is deprecated.  Use `sessionFactory.getEventEngine().getListenerRegistry()` instead
+EventListenerRegistry access via ServiceRegistry is deprecated.  Use `sessionFactory.getEventEngine().getListenerRegistry()` instead
+Session factory constructed with filter configurations : {}
+Instantiating session factory with properties: {dialect=org.hibernate.dialect.MySQL5Dialect, java.specification.version=17, sun.cpu.isalist=amd64, sun.jnu.encoding=Cp1252, hibernate.dialect=org.hibernate.dialect.MySQL5Dialect, java.class.path=D:\Tomcat\apache-tomcat-9.0.63\bin\bootstrap.jar;D:\Tomcat\apache-tomcat-9.0.63\bin\commons-daemon.jar;D:\Tomcat\apache-tomcat-9.0.63\bin\tomcat-juli.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\annotations-api.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\catalina-ant.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\catalina-ha.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\catalina-ssi.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\catalina-storeconfig.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\catalina-tribes.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\catalina.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\ecj-4.20.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\el-api.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\jasper-el.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\jasper.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\jaspic-api.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\jsp-api.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\servlet-api.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-api.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-coyote.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-dbcp.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-i18n-cs.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-i18n-de.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-i18n-es.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-i18n-fr.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-i18n-ja.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-i18n-ko.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-i18n-pt-BR.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-i18n-ru.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-i18n-zh-CN.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-jdbc.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-jni.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-util-scan.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-util.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\tomcat-websocket.jar;D:\Tomcat\apache-tomcat-9.0.63\lib\websocket-api.jar, java.vm.vendor=Amazon.com Inc., sun.arch.data.model=64, hbm2ddl.auto=update, user.variant=, java.vendor.url=https://aws.amazon.com/corretto/, catalina.useNaming=true, user.timezone=America/New_York, java.vm.specification.version=17, os.name=Windows 10, sun.java.launcher=SUN_STANDARD, user.country=US, sun.boot.library.path=C:\Users\Ikikaesu\.jdks\corretto-17.0.3\bin, sun.java.command=org.apache.catalina.startup.Bootstrap start, jdk.debug=release, sun.cpu.endian=little, user.home=C:\Users\Ikikaesu, user.language=en, java.specification.vendor=Oracle Corporation, java.naming.factory.url.pkgs=org.apache.naming, java.version.date=2022-04-19, java.home=C:\Users\Ikikaesu\.jdks\corretto-17.0.3, file.separator=\, java.vm.compressedOopsMode=Zero based, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, java.specification.name=Java Platform API Specification, package.access=sun.,org.apache.catalina.,org.apache.coyote.,org.apache.jasper.,org.apache.tomcat., package.definition=sun.,java.,org.apache.catalina.,org.apache.coyote.,org.apache.jasper.,org.apache.naming.,org.apache.tomcat., hibernate.hbm2ddl.auto=update, user.script=, server.loader=, java.util.logging.config.file=C:\Users\Ikikaesu\.SmartTomcat\project-1-revature\project-1-revature\conf\logging.properties, connection.password=@KonoKo01203735, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, java.runtime.version=17.0.3+6-LTS, java.naming.factory.initial=org.apache.naming.java.javaURLContextFactory, user.name=Ikikaesu, path.separator=;, common.loader="C:\Users\Ikikaesu\.SmartTomcat\project-1-revature\project-1-revature/lib","C:\Users\Ikikaesu\.SmartTomcat\project-1-revature\project-1-revature/lib/*.jar","C:\Users\Ikikaesu\.SmartTomcat\project-1-revature\project-1-revature/lib","C:\Users\Ikikaesu\.SmartTomcat\project-1-revature\project-1-revature/lib/*.jar", hibernate.connection.username=****, os.version=10.0, java.runtime.name=OpenJDK Runtime Environment, hibernate.connection.url=jdbc:mysql://localhost:3306/ers, file.encoding=UTF-8, java.vm.name=OpenJDK 64-Bit Server VM, hibernate.show_sql=true, java.vendor.version=Corretto-17.0.3.6.1, show_sql=true, hibernate.connection.driver_class=com.mysql.cj.jdbc.Driver, java.vendor.url.bug=https://github.com/corretto/corretto-17/issues/, java.io.tmpdir=C:\Users\Ikikaesu\AppData\Local\Temp\, tomcat.util.scan.StandardJarScanFilter.jarsToScan=log4j-taglib*.jar,log4j-web*.jar,log4javascript*.jar,slf4j-taglib*.jar, catalina.home=C:\Users\Ikikaesu\.SmartTomcat\project-1-revature\project-1-revature, java.version=17.0.3, tomcat.util.scan.StandardJarScanFilter.jarsToSkip=annotations-api.jar,ant-junit*.jar,ant-launcher.jar,ant.jar,asm-*.jar,aspectj*.jar,bootstrap.jar,catalina-ant.jar,catalina-ha.jar,catalina-ssi.jar,catalina-storeconfig.jar,catalina-tribes.jar,catalina.jar,cglib-*.jar,cobertura-*.jar,commons-beanutils*.jar,commons-codec*.jar,commons-collections*.jar,commons-daemon.jar,commons-dbcp*.jar,commons-digester*.jar,commons-fileupload*.jar,commons-httpclient*.jar,commons-io*.jar,commons-lang*.jar,commons-logging*.jar,commons-math*.jar,commons-pool*.jar,derby-*.jar,dom4j-*.jar,easymock-*.jar,ecj-*.jar,el-api.jar,geronimo-spec-jaxrpc*.jar,h2*.jar,ha-api-*.jar,hamcrest-*.jar,hibernate*.jar,httpclient*.jar,icu4j-*.jar,jasper-el.jar,jasper.jar,jaspic-api.jar,jaxb-*.jar,jaxen-*.jar,jaxws-rt-*.jar,jdom-*.jar,jetty-*.jar,jmx-tools.jar,jmx.jar,jsp-api.jar,jstl.jar,jta*.jar,junit-*.jar,junit.jar,log4j*.jar,mail*.jar,objenesis-*.jar,oraclepki.jar,oro-*.jar,servlet-api-*.jar,servlet-api.jar,slf4j*.jar,taglibs-standard-spec-*.jar,tagsoup-*.jar,tomcat-api.jar,tomcat-coyote.jar,tomcat-dbcp.jar,tomcat-i18n-*.jar,tomcat-jdbc.jar,tomcat-jni.jar,tomcat-juli-adapters.jar,tomcat-juli.jar,tomcat-util-scan.jar,tomcat-util.jar,tomcat-websocket.jar,tools.jar,websocket-api.jar,wsdl4j*.jar,xercesImpl.jar,xml-apis.jar,xmlParserAPIs-*.jar,xmlParserAPIs.jar,xom-*.jar, user.dir=C:\Users\Ikikaesu\.SmartTomcat\project-1-revature\project-1-revature, os.arch=amd64, connection.username=root, java.vm.specification.name=Java Virtual Machine Specification, hibernate.connection.password=****, sun.os.patch.level=, connection.driver_class=com.mysql.cj.jdbc.Driver, catalina.base=C:\Users\Ikikaesu\.SmartTomcat\project-1-revature\project-1-revature, shared.loader=, hibernate.boot.CfgXmlAccessService.key=org.hibernate.boot.cfgxml.spi.LoadedConfig@7f5b9c53, native.encoding=Cp1252, java.util.logging.manager=org.apache.juli.ClassLoaderLogManager, java.library.path=C:\Users\Ikikaesu\.jdks\corretto-17.0.3\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Ikikasu\AppData\Local\Microsoft\WindowsApps;C:\Users\Ikikasu\AppData\Local\atom\bin;C:\Users\Ikikaesu\AppData\Local\atom\bin;C:\Users\Ikikaesu\AppData\Local\GitHubDesktop\bin;C:\Users\Ikikaesu\.dotnet\tools;C:\Users\Ikikaesu\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Ikikaesu\AppData\Roaming\npm;., java.vendor=Amazon.com Inc., java.vm.info=mixed mode, sharing, java.vm.version=17.0.3+6-LTS, hibernate.bytecode.use_reflection_optimizer=false, sun.io.unicode.encoding=UnicodeLittle, tomcat.util.buf.StringCache.byte.enabled=true, connection.url=jdbc:mysql://localhost:3306/ers, java.class.version=61.0}
+Skipping JACC integration as it was not enabled
+Instantiated session factory
+Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@5299b378] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@4b8a2424]
+Not known whether passed class name [com.revature.database.Reimbursement] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.revature.database.Reimbursement
+Not known whether passed class name [com.revature.database.User] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.revature.database.User
+Static SQL for entity: com.revature.database.Reimbursement
+ Version select: select Reimbursement_ID from REIMBURSEMENT where Reimbursement_ID =?
+ Snapshot select: select reimbursem_.Reimbursement_ID, reimbursem_.User_ID as user_id2_0_, reimbursem_.Title as title3_0_, reimbursem_.Amount as amount4_0_, reimbursem_.Detail as detail5_0_, reimbursem_.Date as date6_0_, reimbursem_.Status as status7_0_, reimbursem_.Image as image8_0_ from REIMBURSEMENT reimbursem_ where reimbursem_.Reimbursement_ID=?
+ Insert 0: insert into REIMBURSEMENT (User_ID, Title, Amount, Detail, Date, Status, Image, Reimbursement_ID) values (?, ?, ?, ?, ?, ?, ?, ?)
+ Update 0: update REIMBURSEMENT set User_ID=?, Title=?, Amount=?, Detail=?, Date=?, Status=?, Image=? where Reimbursement_ID=?
+ Delete 0: delete from REIMBURSEMENT where Reimbursement_ID=?
+ Identity insert: insert into REIMBURSEMENT (User_ID, Title, Amount, Detail, Date, Status, Image) values (?, ?, ?, ?, ?, ?, ?)
+Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4356d867]
+Visiting attribute path : user_ID
+Visiting attribute path : title
+Visiting attribute path : amount
+Visiting attribute path : detail
+Visiting attribute path : date
+Visiting attribute path : status
+Visiting attribute path : image
+Building LoadPlan...
+processing queryspace <gen:0>
+LoadPlan(entity=com.revature.database.Reimbursement)
+    - Returns
+       - EntityReturnImpl(entity=com.revature.database.Reimbursement, querySpaceUid=<gen:0>, path=com.revature.database.Reimbursement)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.revature.database.Reimbursement)
+          - SQL table alias mapping - reimbursem0_
+          - alias suffix - 0_
+          - suffixed key columns - {reimburs1_0_0_}
+
+Static select for entity com.revature.database.Reimbursement [NONE]: select reimbursem0_.Reimbursement_ID as reimburs1_0_0_, reimbursem0_.User_ID as user_id2_0_0_, reimbursem0_.Title as title3_0_0_, reimbursem0_.Amount as amount4_0_0_, reimbursem0_.Detail as detail5_0_0_, reimbursem0_.Date as date6_0_0_, reimbursem0_.Status as status7_0_0_, reimbursem0_.Image as image8_0_0_ from REIMBURSEMENT reimbursem0_ where reimbursem0_.Reimbursement_ID=?
+Static SQL for entity: com.revature.database.User
+ Version select: select User_ID from USER where User_ID =?
+ Snapshot select: select user_.User_ID, user_.First_Name as first_na2_1_, user_.Last_Name as last_nam3_1_, user_.Email as email4_1_, user_.Type as type5_1_, user_.Username as username6_1_, user_.Password as password7_1_ from USER user_ where user_.User_ID=?
+ Insert 0: insert into USER (First_Name, Last_Name, Email, Type, Username, Password, User_ID) values (?, ?, ?, ?, ?, ?, ?)
+ Update 0: update USER set First_Name=?, Last_Name=?, Email=?, Type=?, Username=?, Password=? where User_ID=?
+ Delete 0: delete from USER where User_ID=?
+ Identity insert: insert into USER (First_Name, Last_Name, Email, Type, Username, Password) values (?, ?, ?, ?, ?, ?)
+Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@c65e95]
+Visiting attribute path : first_Name
+Visiting attribute path : last_Name
+Visiting attribute path : email
+Visiting attribute path : type
+Visiting attribute path : username
+Visiting attribute path : password
+Building LoadPlan...
+processing queryspace <gen:0>
+LoadPlan(entity=com.revature.database.User)
+    - Returns
+       - EntityReturnImpl(entity=com.revature.database.User, querySpaceUid=<gen:0>, path=com.revature.database.User)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.revature.database.User)
+          - SQL table alias mapping - user0_
+          - alias suffix - 0_
+          - suffixed key columns - {user_id1_1_0_}
+
+Static select for entity com.revature.database.User [NONE]: select user0_.User_ID as user_id1_1_0_, user0_.First_Name as first_na2_1_0_, user0_.Last_Name as last_nam3_1_0_, user0_.Email as email4_1_0_, user0_.Type as type5_1_0_, user0_.Username as username6_1_0_, user0_.Password as password7_1_0_ from USER user0_ where user0_.User_ID=?
+HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5a31074e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+No alter strings for table : REIMBURSEMENT
+No alter strings for table : USER
+No JtaPlatform was specified, checking resolver
+No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Checking 0 named HQL queries
+Checking 0 named SQL queries
+EventListenerRegistry access via ServiceRegistry is deprecated.  Use `sessionFactory.getEventEngine().getListenerRegistry()` instead
+Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@21d1d6e2
+Registering SessionFactory: c3db5d2a-9917-4da4-ba5a-bf8b39d76f12 (<unnamed>)
+Not binding SessionFactory to JNDI, no JNDI name configured
+Getting user information for user: tl123 password: admin
+Getting list of users!
+Statistics initialized [enabled=false]
+On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+begin
+QueryTranslatorFactory: org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory@77a8f08
+parse() - HQL: FROM com.revature.database.User
+throwQueryException() : no errors
+--- HQL AST ---
+ \-[QUERY] Node: 'query'
+    \-[SELECT_FROM] Node: 'SELECT_FROM'
+       \-[FROM] Node: 'FROM'
+          \-[RANGE] Node: 'RANGE'
+             \-[DOT] Node: '.'
+                +-[DOT] Node: '.'
+                |  +-[DOT] Node: '.'
+                |  |  +-[IDENT] Node: 'com'
+                |  |  \-[IDENT] Node: 'revature'
+                |  \-[IDENT] Node: 'database'
+                \-[IDENT] Node: 'User'
+
+select << begin [level=1, statement=select]
+FromClause{level=1} : com.revature.database.User (<no alias>) -> user0_
+select : finishing up [level=1, statement=select]
+processQuery() :  ( SELECT ( FromClause{level=1} USER user0_ ) )
+Derived SELECT clause created.
+Tables referenced from query nodes:
+ \-QueryNode
+    +-SelectClause
+    | referencedTables(entity User): [USER]
+    |  +-SelectExpressionImpl
+    |  | persister: SingleTableEntityPersister(com.revature.database.User)
+    |  \-SqlFragment
+    \-FromClause
+       \-FromElement
+
+Using FROM fragment [USER user0_]
+select >> end [level=1, statement=select]
+--- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (USER)
+    +-[SELECT_CLAUSE] SelectClause: '{derived select clause}'
+    |  +-[SELECT_EXPR] SelectExpressionImpl: 'user0_.User_ID as user_id1_1_' {FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=null,role=null,tableName=USER,tableAlias=user0_,origin=null,columns={,className=com.revature.database.User}}}
+    |  \-[SQL_TOKEN] SqlFragment: 'user0_.First_Name as first_na2_1_, user0_.Last_Name as last_nam3_1_, user0_.Email as email4_1_, user0_.Type as type5_1_, user0_.Username as username6_1_, user0_.Password as password7_1_'
+    \-[FROM] FromClause: 'FROM' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[], fromElementByTableAlias=[user0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+       \-[FROM_FRAGMENT] FromElement: 'USER user0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=null,role=null,tableName=USER,tableAlias=user0_,origin=null,columns={,className=com.revature.database.User}}
+
+throwQueryException() : no errors
+HQL: FROM com.revature.database.User
+SQL: select user0_.User_ID as user_id1_1_, user0_.First_Name as first_na2_1_, user0_.Last_Name as last_nam3_1_, user0_.Email as email4_1_, user0_.Type as type5_1_, user0_.Username as username6_1_, user0_.Password as password7_1_ from USER user0_
+throwQueryException() : no errors
+select user0_.User_ID as user_id1_1_, user0_.First_Name as first_na2_1_, user0_.Last_Name as last_nam3_1_, user0_.Email as email4_1_, user0_.Type as type5_1_, user0_.Username as username6_1_, user0_.Password as password7_1_ from USER user0_
+Result set row: 0
+Result row: EntityKey[com.revature.database.User#1001]
+Result set row: 1
+Result row: EntityKey[com.revature.database.User#1002]
+Result set row: 2
+Result row: EntityKey[com.revature.database.User#1003]
+Result set row: 3
+Result row: EntityKey[com.revature.database.User#1004]
+Result set row: 4
+Result row: EntityKey[com.revature.database.User#1005]
+Result set row: 5
+Result row: EntityKey[com.revature.database.User#1008]
+Resolving attributes for [com.revature.database.User#1001]
+Processing attribute `first_Name` : value = Jeffery
+Attribute (`first_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `last_Name` : value = Saelee
+Attribute (`last_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `email` : value = js@gmail.com
+Attribute (`email`)  - enhanced for lazy-loading? - false
+Processing attribute `type` : value = Manager
+Attribute (`type`)  - enhanced for lazy-loading? - false
+Processing attribute `username` : value = js123
+Attribute (`username`)  - enhanced for lazy-loading? - false
+Processing attribute `password` : value = admin
+Attribute (`password`)  - enhanced for lazy-loading? - false
+Done materializing entity [com.revature.database.User#1001]
+Resolving attributes for [com.revature.database.User#1002]
+Processing attribute `first_Name` : value = Thomas
+Attribute (`first_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `last_Name` : value = Lin
+Attribute (`last_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `email` : value = tl@gmail.com
+Attribute (`email`)  - enhanced for lazy-loading? - false
+Processing attribute `type` : value = Manager
+Attribute (`type`)  - enhanced for lazy-loading? - false
+Processing attribute `username` : value = tl123
+Attribute (`username`)  - enhanced for lazy-loading? - false
+Processing attribute `password` : value = admin
+Attribute (`password`)  - enhanced for lazy-loading? - false
+Done materializing entity [com.revature.database.User#1002]
+Resolving attributes for [com.revature.database.User#1003]
+Processing attribute `first_Name` : value = test1
+Attribute (`first_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `last_Name` : value = employee
+Attribute (`last_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `email` : value = test@gmail.com
+Attribute (`email`)  - enhanced for lazy-loading? - false
+Processing attribute `type` : value = Employee
+Attribute (`type`)  - enhanced for lazy-loading? - false
+Processing attribute `username` : value = test1
+Attribute (`username`)  - enhanced for lazy-loading? - false
+Processing attribute `password` : value = 123
+Attribute (`password`)  - enhanced for lazy-loading? - false
+Done materializing entity [com.revature.database.User#1003]
+Resolving attributes for [com.revature.database.User#1004]
+Processing attribute `first_Name` : value = test2
+Attribute (`first_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `last_Name` : value = user
+Attribute (`last_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `email` : value = testu@gmail.com
+Attribute (`email`)  - enhanced for lazy-loading? - false
+Processing attribute `type` : value = Employee
+Attribute (`type`)  - enhanced for lazy-loading? - false
+Processing attribute `username` : value = test2
+Attribute (`username`)  - enhanced for lazy-loading? - false
+Processing attribute `password` : value = 123
+Attribute (`password`)  - enhanced for lazy-loading? - false
+Done materializing entity [com.revature.database.User#1004]
+Resolving attributes for [com.revature.database.User#1005]
+Processing attribute `first_Name` : value = t
+Attribute (`first_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `last_Name` : value = l
+Attribute (`last_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `email` : value = thomaslin030735@gmail.com
+Attribute (`email`)  - enhanced for lazy-loading? - false
+Processing attribute `type` : value = Manager
+Attribute (`type`)  - enhanced for lazy-loading? - false
+Processing attribute `username` : value = admin
+Attribute (`username`)  - enhanced for lazy-loading? - false
+Processing attribute `password` : value = 123
+Attribute (`password`)  - enhanced for lazy-loading? - false
+Done materializing entity [com.revature.database.User#1005]
+Resolving attributes for [com.revature.database.User#1008]
+Processing attribute `first_Name` : value = Alternate
+Attribute (`first_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `last_Name` : value = Account
+Attribute (`last_Name`)  - enhanced for lazy-loading? - false
+Processing attribute `email` : value = thomaslin030735@gmail.com
+Attribute (`email`)  - enhanced for lazy-loading? - false
+Processing attribute `type` : value = Manager
+Attribute (`type`)  - enhanced for lazy-loading? - false
+Processing attribute `username` : value = 123serter
+Attribute (`username`)  - enhanced for lazy-loading? - false
+Processing attribute `password` : value = admin
+Attribute (`password`)  - enhanced for lazy-loading? - false
+Done materializing entity [com.revature.database.User#1008]
+User list found!
+User found
+Connection pool now considered primed; min-size will be maintained
