@@ -48,6 +48,7 @@ public class ManagementResolvedServlet extends HttpServlet {
                 output.append("<div>").append("<div class='card w-75 mx-auto mb-3'>\n" +
                         "<h5 class='card-header'>Reimbursement # "+reimbursement.getReimbursement_ID()+" | "+reimbursement.getTitle()+"</h5>\n" +
                         "<div class='card-body'>\n" +
+                        "<h6 class='card-title'><strong>User# " + reimbursement.getUser_ID() + "</strong></h6>\n" +
                         "<p class='card-text'><strong>Description</strong> "+reimbursement.getDetail()+"</p>\n" +
                         "<p class='card-text'><strong>Amount</strong> "+ NumberFormat.getCurrencyInstance().format(reimbursement.getAmount())+"</p>\n" +
                         "<p class='card-text'><strong>Status</strong> "+reimbursement.getStatus()+"</p>\n" +
