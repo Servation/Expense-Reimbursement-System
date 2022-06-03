@@ -27,6 +27,8 @@ public class ManagementResolvedServlet extends HttpServlet {
                 if (user.getType().equals("Manager")) {
                     request.getRequestDispatcher("manager-home.html").include(request, response);
                     request.getRequestDispatcher("management-tools.component.html").include(request, response);
+                    out.println("<script>\n\tdocument.getElementById('management-tools').classList.toggle('active')\n</script>");
+                    out.println("<script>\n\tdocument.getElementById('resolved-link').classList.toggle('active')\n</script>");
                     out.println(manageResolved());
                 } else {
                     throw new Exception();

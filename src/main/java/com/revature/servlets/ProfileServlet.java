@@ -30,6 +30,7 @@ public class ProfileServlet extends HttpServlet {
                 } else {
                     throw new NoLoginException();
                 }
+                out.println("<script>\n\tdocument.getElementById('profile').classList.toggle('active')\n</script>");
             }else {
                 throw new NoLoginException();
             }
@@ -57,6 +58,7 @@ public class ProfileServlet extends HttpServlet {
                 } else {
                     throw new NoLoginException();
                 }
+                out.println("<script>\n\tdocument.getElementById('profile').classList.toggle('active')\n</script>");
                 String newUsername = request.getParameter("username");
                 String newPassword = request.getParameter("password");
                 String newEmail = request.getParameter("email");
