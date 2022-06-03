@@ -27,6 +27,8 @@ public class EmployeeResolvedServlet extends HttpServlet {
                 if (user.getType().equals("Employee")) {
                     request.getRequestDispatcher("employee-home.html").include(request, response);
                     request.getRequestDispatcher("employee-reimbursement-controls.component.html").include(request, response);
+                    out.println("<script>\n\tdocument.getElementById('reimbursement-tools').classList.toggle('active')\n</script>");
+                    out.println("<script>\n\tdocument.getElementById('resolved-link').classList.toggle('active')\n</script>");
                     out.println(employeeResolved(user.getUser_id()));
                 } else {
                     throw new  NoLoginException();
