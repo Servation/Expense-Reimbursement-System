@@ -1,9 +1,6 @@
-﻿# Project 1: Expense Reimbursement System - Enterprise
- 
- ## Project Description
- Expense Reimbursement System (ERS)In this document, all requirements and required
-    technologies pertaining the first full stack individual project of your
-    training will be presented. All requirements are mandatory.
+# Project 1: Expense Reimbursement System - Enterprise
+
+## Description
 
 The Expense Reimbursement System will manage the process of reimbursing employees
     for expenses incurred while on company time.
@@ -14,7 +11,6 @@ Employees in the company can login and submit requests for reimbursement and
 Finance managers can log in and view all reimbursement requests and history for
     all employees in the company, and they are authorized to approve and deny requests for expense
     reimbursement.
-
 
 ## Features
 - As an User you can:
@@ -27,22 +23,24 @@ Finance managers can log in and view all reimbursement requests and history for
   - View their own pending request
   - View their own resolved request
   - Upload an image of their receipt as part of the reimbursement request
-  - Receive an email when one of their reimbursement si resolved
+  - Receive an email when one of their reimbursement is resolved
   - View their information
   - Update their information
 - As a Manager:
   - View manager home page
-  - View all employee
+  - View all employees
   - Approve/Deny pending reimbursement
   - View all pending reimbursement
   - View all resolved reimbursement
   - View reimbursement of a specific employee
   - View an image of the reciept of a reimbursement request
-  - Register an empployee and send an email to that employee with his credentials
+  - Register an employee and send an email to that employee with his credentials
 
 ## Technology used
  - Java 1.8
+ - JavaScript
  - Servlets
+ - Maven
  - SQL
  - HTML/CSS
  - Bootstrap
@@ -51,6 +49,10 @@ Finance managers can log in and view all reimbursement requests and history for
  - JDBC
  - Tomcat
  - Hibernate
+ - JQuery
+
+![Management tools page](../image-assets/management-tools-page.png?raw=true)
+[More images of working project](https://github.com/Servation/Expense-Reimbursement-System/tree/image-assets)
 
 ## Contributor
 >Jeffrey Saelee
