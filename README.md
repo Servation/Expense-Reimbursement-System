@@ -51,6 +51,7 @@ Finance managers can log in and view all reimbursement requests and history for
  - Tomcat
  - Hibernate
  - JQuery
+ - Log4J
 
 ![Management tools page](../image-assets/management-tools-page.png?raw=true)
 [More images of working project](https://github.com/Servation/Expense-Reimbursement-System/tree/image-assets)
